@@ -1,0 +1,6 @@
+#main {
+    min-width: 300px;
+}
+#main > img.loading {
+    margin: 40px 0 0 20px;
+}

@@ -1,0 +1,546 @@
+<h2><a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a></h2>
+<p><b>JavaScript</b> (<b>JS</b>) is a <a href="http://en.wikipedia.org/wiki/Dynamic_programming_language" title="Dynamic programming language">dynamic</a> computer <a href="http://en.wikipedia.org/wiki/Programming_language" title="Programming language">programming language</a>. It is most commonly used as part of <a href="http://en.wikipedia.org/wiki/Web_browser" title="Web browser">web browsers</a>, whose implementations allow <a href="http://en.wikipedia.org/wiki/Client-side_scripting" title="Client-side scripting">client-side scripts</a> to <a href="http://en.wikipedia.org/wiki/User_interface" title="User interface">interact with the user</a>, control the browser, communicate <a href="http://en.wikipedia.org/wiki/Ajax_(programming)" title="Ajax (programming)">asynchronously</a>, and alter the <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">document content</a> that is displayed. It is also being used in server-side programming, game development and the creation of desktop and mobile applications.</p>
+<p>JavaScript is a <a href="http://en.wikipedia.org/wiki/Prototype-based_programming" title="Prototype-based programming">prototype-based</a> <a href="http://en.wikipedia.org/wiki/Scripting_language" title="Scripting language">scripting language</a> with <a href="http://en.wikipedia.org/wiki/Dynamic_language" title="Dynamic language" class="mw-redirect">dynamic</a> typing and has <a href="http://en.wikipedia.org/wiki/First-class_functions" title="First-class functions" class="mw-redirect">first-class functions</a>. Its <a href="http://en.wikipedia.org/wiki/JavaScript_syntax" title="JavaScript syntax">syntax</a> was influenced by <a href="http://en.wikipedia.org/wiki/C_(programming_language)" title="C (programming language)">C</a>. JavaScript copies many names and naming conventions from <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the <a href="http://en.wikipedia.org/wiki/Self_(programming_language)" title="Self (programming language)">Self</a> and <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)" title="Scheme (programming language)">Scheme</a> programming languages. It is a <a href="http://en.wikipedia.org/wiki/Multi-paradigm" title="Multi-paradigm" class="mw-redirect">multi-paradigm</a> language, supporting <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" title="Object-oriented programming">object-oriented</a>, <a href="http://en.wikipedia.org/wiki/Imperative_programming" title="Imperative programming">imperative</a>, and <a href="http://en.wikipedia.org/wiki/Functional_programming" title="Functional programming">functional</a> programming styles.</p>
+<p>The application of JavaScript in use outside of web pages—for example, in <a href="http://en.wikipedia.org/wiki/Portable_Document_Format" title="Portable Document Format">PDF</a> documents, <a href="http://en.wikipedia.org/wiki/Site-specific_browser" title="Site-specific browser">site-specific browsers</a>, and <a href="http://en.wikipedia.org/wiki/Desktop_widget" title="Desktop widget" class="mw-redirect">desktop widgets</a>—is also significant. Newer and faster JavaScript <a href="http://en.wikipedia.org/wiki/Virtual_machine" title="Virtual machine">VMs</a> and platforms built upon them (notably <a href="http://en.wikipedia.org/wiki/Node.js" title="Node.js">Node.js</a>) have also increased the popularity of JavaScript for server-side <a href="http://en.wikipedia.org/wiki/Web_application" title="Web application">web applications</a>. On the client side, JavaScript was traditionally implemented as an <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)" title="Interpreter (computing)">interpreted</a> language but <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation" title="Just-in-time compilation">just-in-time</a> compilation is now performed by recent (post-2012) browsers.</p>
+<p>JavaScript was formalized in the <a href="http://en.wikipedia.org/wiki/ECMAScript" title="ECMAScript">ECMAScript</a> language standard and is primarily used as part of a web browser (<a href="http://en.wikipedia.org/wiki/Client-side_JavaScript" title="Client-side JavaScript" class="mw-redirect">client-side JavaScript</a>). This enables <a href="http://en.wikipedia.org/wiki/Computer_programming" title="Computer programming">programmatic</a> access to computational objects within a host environment.</p>
+<p></p>
+
+<h2 class="affixnav-header level1">History</h2>
+<h3 class="affixnav-header level2">Birth at Netscape</h3>
+<p>JavaScript was originally developed by <a href="http://en.wikipedia.org/wiki/Brendan_Eich" title="Brendan Eich">Brendan Eich</a>. While battling with Microsoft over the Web, Netscape considered their client-server offering a distributed OS, running a portable version of <a href="http://en.wikipedia.org/wiki/Sun_Microsystems" title="Sun Microsystems">Sun Microsystems</a>' Java. Because Java was a competitor of <a href="http://en.wikipedia.org/wiki/C%2B%2B" title="C++">C++</a> and aimed at professional programmers, Netscape also wanted a lightweight <a href="http://en.wikipedia.org/wiki/Interpreted_language" title="Interpreted language">interpreted language</a> that would complement Java by appealing to nonprofessional programmers, like Microsoft's Visual Basic.</p>
+<p>Although it was developed under the name <i>Mocha</i>, the language was officially called <i>LiveScript</i> when it first shipped in beta releases of Netscape Navigator 2.0 in September 1995, but it was renamed JavaScript when it was deployed in the Netscape browser version 2.0B3.</p>
+<p>The change of name from LiveScript to JavaScript roughly coincided with Netscape adding support for Java technology in its <a href="http://en.wikipedia.org/wiki/Netscape_Navigator" title="Netscape Navigator">Netscape Navigator</a> web browser. The final choice of name caused confusion, giving the impression that the language was a spin-off of the <a href="http://en.wikipedia.org/wiki/Java_programming_language" title="Java programming language" class="mw-redirect">Java programming language</a>, and the choice has been characterized by many as a marketing ploy by Netscape to give JavaScript the cachet of what was then the hot new web programming language.</p>
+<p>There is a common misconception that the JavaScript language was influenced by <a href="http://en.wikipedia.org/wiki/C--" title="C--">C--</a> (Pronounced "See-minus-minus"), an earlier web page scripting language developed by <a href="http://en.wikipedia.org/wiki/Openwave" title="Openwave">Nombas</a>. Brendan Eich, however, had never heard of C-- before he created LiveScript. Nombas did pitch their embedded web page scripting to Netscape, though web page scripting was not a new concept, as shown by <a href="http://en.wikipedia.org/wiki/ViolaWWW" title="ViolaWWW">ViolaWWW</a>. Nombas later switched to offering JavaScript instead of C-- in their ScriptEase product and was part of the TC39 group that standardized <a href="http://en.wikipedia.org/wiki/ECMAScript" title="ECMAScript">ECMAScript</a>.</p>
+
+<h3 class="affixnav-header level2">Server-side JavaScript</h3>
+<p>Netscape introduced an implementation of the language for <a href="http://en.wikipedia.org/wiki/Server-side_scripting" title="Server-side scripting">server-side scripting</a> (SSJS) with <a href="http://en.wikipedia.org/wiki/Netscape_Enterprise_Server" title="Netscape Enterprise Server">Netscape Enterprise Server</a>, first released in December, 1994 (soon after releasing JavaScript for browsers). Since the mid-2000s, there has been a proliferation of <a href="http://en.wikipedia.org/wiki/Comparison_of_server-side_JavaScript_solutions" title="Comparison of server-side JavaScript solutions">server-side JavaScript implementations</a>. <a href="http://en.wikipedia.org/wiki/Node.js" title="Node.js">Node.js</a> is one recent notable example of server-side JavaScript being used in real-world applications.</p>
+
+<h3 class="affixnav-header level2">Adoption by Microsoft</h3>
+<p>JavaScript very quickly gained widespread success as a client-side scripting language for web pages. <a href="http://en.wikipedia.org/wiki/Microsoft" title="Microsoft">Microsoft</a> introduced JavaScript support in its own web browser, <a href="http://en.wikipedia.org/wiki/Internet_Explorer" title="Internet Explorer">Internet Explorer</a>, in version 3.0, released in August 1996. Microsoft's webserver, <a href="http://en.wikipedia.org/wiki/Internet_Information_Server" title="Internet Information Server" class="mw-redirect">Internet Information Server</a>, introduced support for server-side scripting in JavaScript with release 3.0 (1996). Microsoft started to promote webpage scripting using the umbrella term <a href="http://en.wikipedia.org/wiki/Dynamic_HTML" title="Dynamic HTML">Dynamic HTML</a>.</p>
+<p>Microsoft's JavaScript implementation was later renamed <a href="http://en.wikipedia.org/wiki/JScript" title="JScript">JScript</a> to avoid trademark issues. JScript added new date methods to fix the <a href="http://en.wikipedia.org/wiki/Year_2000_problem" title="Year 2000 problem">Y2K</a>-problematic methods in JavaScript, which were based on Java's <code><a href="http://en.wikipedia.org/wiki/Java.util" title="Java.util" class="mw-redirect">java.util.Date</a></code> class.</p>
+
+<h3 class="affixnav-header level2">Standardization</h3>
+<p>In November 1996, Netscape announced that it had submitted JavaScript to <a href="http://en.wikipedia.org/wiki/Ecma_International" title="Ecma International">Ecma International</a> for consideration as an industry standard, and subsequent work resulted in the standardized version named <a href="http://en.wikipedia.org/wiki/ECMAScript" title="ECMAScript">ECMAScript</a>. In June 1997, <a href="http://en.wikipedia.org/wiki/Ecma_International" title="Ecma International">Ecma International</a> published the first edition of the <a href="http://en.wikipedia.org/wiki/ECMA-262" title="ECMA-262" class="mw-redirect">ECMA-262</a> <a href="http://en.wikipedia.org/wiki/Specification" title="Specification" class="mw-redirect">specification</a>. A year later, in June 1998, some modifications were made to adapt it to the ISO/IEC-16262 standard, and the second edition was released. The third edition of <a href="http://en.wikipedia.org/wiki/ECMA-262" title="ECMA-262" class="mw-redirect">ECMA-262</a> was published on December 1999.</p>
+<p>Development of what would have been a fourth edition of the ECMAScript standard was ultimately never completed and no fourth edition was released. The fifth edition was released in December 2009. The current edition of the ECMAScript standard is 5.1, released in June 2011.</p>
+
+<h3 class="affixnav-header level2">Later developments</h3>
+<p>JavaScript has become one of the most popular programming languages on the web. Initially, however, many professional programmers denigrated the language because its target audience consisted of web authors and other such "amateurs", among other reasons. The advent of <a href="http://en.wikipedia.org/wiki/Ajax_(programming)" title="Ajax (programming)">Ajax</a> returned JavaScript to the spotlight and brought more professional programming attention. The result was a proliferation of comprehensive <a href="http://en.wikipedia.org/wiki/List_of_JavaScript_libraries" title="List of JavaScript libraries">frameworks and libraries</a>, improved JavaScript programming practices, and increased usage of JavaScript outside of web browsers, as seen by the proliferation of <a href="http://en.wikipedia.org/wiki/Server-side_JavaScript" title="Server-side JavaScript" class="mw-redirect">server-side JavaScript</a> platforms.</p>
+<p>In January 2009, the <a href="http://en.wikipedia.org/wiki/CommonJS" title="CommonJS">CommonJS</a> project was founded with the goal of specifying a common standard library mainly for JavaScript development outside the browser.</p>
+
+<h2 class="affixnav-header level1">Trademark</h2>
+<p>Today, "JavaScript" is a <a href="http://en.wikipedia.org/wiki/Trademark" title="Trademark">trademark</a> of <a href="http://en.wikipedia.org/wiki/Oracle_Corporation" title="Oracle Corporation">Oracle Corporation</a>. It is used under license for technology invented and implemented by Netscape Communications and current entities such as the <a href="http://en.wikipedia.org/wiki/Mozilla_Foundation" title="Mozilla Foundation">Mozilla Foundation</a>.</p>
+
+<h2 class="affixnav-header level1">Features</h2>
+<p>The following features are common to all conforming ECMAScript implementations, unless explicitly specified otherwise.</p>
+
+<h3 class="affixnav-header level2">Imperative and structured</h3>
+<p>JavaScript supports much of the <a href="http://en.wikipedia.org/wiki/Structured_programming" title="Structured programming">structured programming</a> syntax from <a href="http://en.wikipedia.org/wiki/C_(computer_language)" title="C (computer language)" class="mw-redirect">C</a> (e.g., <code>if</code> statements, <code>while</code> loops, <code>switch</code> statements, etc.). One partial exception is <a href="http://en.wikipedia.org/wiki/Scope_(computer_science)" title="Scope (computer science)">scoping</a>: C-style <a href="http://en.wikipedia.org/wiki/Block_scoping" title="Block scoping" class="mw-redirect">block scoping</a> is not supported. Instead, JavaScript has <a href="http://en.wikipedia.org/wiki/Function_scoping" title="Function scoping" class="mw-redirect">function scoping</a> (although, block scoping using the <code>let</code> keyword was added in JavaScript 1.7). Like C, JavaScript makes a distinction between <a href="http://en.wikipedia.org/wiki/Expression_(programming)" title="Expression (programming)" class="mw-redirect">expressions</a> and <a href="http://en.wikipedia.org/wiki/Statement_(programming)" title="Statement (programming)" class="mw-redirect">statements</a>. One syntactic difference from C is <a href="http://en.wikipedia.org/wiki/Defensive_semicolon" title="Defensive semicolon" class="mw-redirect">automatic semicolon insertion</a>, which allows the semicolons that would normally terminate statements to be omitted.</p>
+
+<h3 class="affixnav-header level2">Dynamic</h3>
+<dl>
+<dt>Dynamic typing</dt>
+<dd>As in most <a href="http://en.wikipedia.org/wiki/Scripting_language" title="Scripting language">scripting languages</a>, <a href="http://en.wikipedia.org/wiki/Type_system" title="Type system">types</a> are associated with <a href="http://en.wikipedia.org/wiki/Value_(computer_science)" title="Value (computer science)">values</a>, not with <a href="http://en.wikipedia.org/wiki/Variable_(programming)" title="Variable (programming)" class="mw-redirect">variables</a>. For example, a variable <code>x</code> could be bound to a number, then later rebound to a <a href="http://en.wikipedia.org/wiki/String_(computer_science)" title="String (computer science)">string</a>. JavaScript supports various ways to test the type of an object, including <a href="http://en.wikipedia.org/wiki/Duck_typing" title="Duck typing">duck typing</a>.</dd>
+<dt>Object-based</dt>
+<dd>JavaScript is almost entirely <a href="http://en.wikipedia.org/wiki/Object-based" title="Object-based">object-based</a>. JavaScript <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" title="Object (computer science)">objects</a> are <a href="http://en.wikipedia.org/wiki/Associative_array" title="Associative array">associative arrays</a>, augmented with prototypes (see below). Object property names are string keys. They support two equivalent syntaxes: dot notation (<code>obj.x&#160;=&#160;10</code>) and bracket notation (<code>obj['x']&#160;=&#160;10</code>). Properties and their values can be added, changed, or deleted at run-time. Most properties of an object (and those on its prototype inheritance chain) can be enumerated using a <code>for...in</code> loop. JavaScript has a small number of built-in objects such as <code>Function</code> and <code>Date</code>.</dd>
+<dt>Run-time evaluation</dt>
+<dd>JavaScript includes an <code><a href="http://en.wikipedia.org/wiki/Eval" title="Eval">eval</a></code> function that can execute statements provided as strings at run-time.</dd>
+</dl>
+<p>DHTML allows scripting languages to change variables in a web page's definition language, which in turn affects the look and function of otherwise "static" HTML page content, after the page has been fully loaded and during the viewing process. Thus the dynamic characteristic of DHTML is the way it functions while a page is viewed, not in its ability to generate a unique page with each page load.</p>
+
+<h3 class="affixnav-header level2">Functional</h3>
+<dl>
+<dt>First-class functions</dt>
+<dd><a href="http://en.wikipedia.org/wiki/Subroutine" title="Subroutine">Functions</a> are <a href="http://en.wikipedia.org/wiki/First-class_function" title="First-class function">first-class</a>; they are objects themselves. As such, they have properties and methods, such as <code>.call()</code> and <code>.bind()</code>. A <i>nested</i> function is a function defined within another function. It is created each time the outer function is invoked. In addition, each created function forms a <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)" title="Closure (computer science)" class="mw-redirect">lexical closure</a>: the <a href="http://en.wikipedia.org/wiki/Scope_(programming)#Lexical_scoping_vs._dynamic_scoping" title="Scope (programming)" class="mw-redirect">lexical scope</a> of the outer function, including any constants, local variables and argument values, becomes part of the internal state of each inner function object, even after execution of the outer function concludes.</dd>
+</dl>
+<h3 class="affixnav-header level2">Prototype-based</h3>
+<dl>
+<dt>Prototypes</dt>
+<dd>JavaScript uses <a href="http://en.wikipedia.org/wiki/Prototype-based_programming" title="Prototype-based programming">prototypes</a> where many other object oriented languages use <a href="http://en.wikipedia.org/wiki/Class_(computer_science)" title="Class (computer science)" class="mw-redirect">classes</a> for <a href="http://en.wikipedia.org/wiki/Inheritance_(computer_science)" title="Inheritance (computer science)" class="mw-redirect">inheritance</a>. It is possible to simulate many class-based features with prototypes in JavaScript.</dd>
+<dt>Functions as object constructors</dt>
+<dd>Functions double as object constructors along with their typical role. Prefixing a function call with <code>new</code> will create an instance of a prototype, inheriting properties and methods from the constructor (including properties from the <code>Object</code> prototype). ECMAScript 5 offers the <code>Object.create</code> method, allowing explicit creation of an instance without automatically inheriting from the <code>Object</code> prototype (older environments can assign the prototype to <code>null</code>). The constructor's <code>prototype</code> property determines the object used for the new object's internal prototype. New methods can be added by modifying the prototype of the object used as a constructor. JavaScript's built-in constructors, such as <code>Array</code> or <code>Object</code>, also have prototypes that can be modified. While it is possible to modify the <code>Object</code> prototype, it is generally considered bad practice because most objects in JavaScript will inherit methods and properties from the <code>Object</code> prototype and they may not expect the prototype to be modified.</dd>
+<dt>Functions as methods</dt>
+<dd>Unlike many object-oriented languages, there is no distinction between a function definition and a <a href="http://en.wikipedia.org/wiki/Method_(computer_science)" title="Method (computer science)" class="mw-redirect">method</a> definition. Rather, the distinction occurs during function calling; when a function is called as a method of an object, the function's local <code>this</code> keyword is bound to that object for that invocation.</dd>
+</dl>
+
+<h3 class="affixnav-header level2">Implicit and Explicit Delegation</h3>
+<p>JavaScript is a <a href="http://en.wikipedia.org/wiki/Delegation_(programming)" title="Delegation (programming)">Delegation Language</a>.</p>
+<dl>
+<dt>Functions as Roles (Traits and Mixins)</dt>
+<dd>JavaScript natively supports various function based implementations of <a href="http://en.wikipedia.org/wiki/Role-oriented_programming" title="Role-oriented programming">Role</a> patterns like <a href="http://en.wikipedia.org/wiki/Traits_(computer_science)" title="Traits (computer science)" class="mw-redirect">Traits</a> and <a href="http://en.wikipedia.org/wiki/Mixin" title="Mixin">Mixins</a>. Such a function defines additional behavior by at least one method bound to the <code>this</code> keyword within its <code>function</code> body. A Role then has to be delegated explicitly via <code>call</code> or <code>apply</code> to objects that need to feature additional behavior that is not shared via the prototype chain.</dd>
+<dt>Type Composition and Inheritance</dt>
+<dd>Whereas explicit function based delegation does cover <a href="http://en.wikipedia.org/wiki/Object_composition" title="Object composition">composition</a> in JavaScript, implicit delegation already happens every time the prototype chain is walked in order to e.g. find a method that might be related to but is not directly owned by an object. Once the method was found it gets called within this object's context. Thus <a href="http://en.wikipedia.org/wiki/Inheritance_(computer_science)" title="Inheritance (computer science)" class="mw-redirect">inheritance</a> in JavaScript is covered by a delegation automatism that is bound to the prototype property of constructor functions.</dd>
+</dl>
+
+<h3 class="affixnav-header level2">Miscellaneous</h3>
+<dl>
+<dt>Run-time environment</dt>
+<dd>JavaScript typically relies on a run-time environment (e.g. a <a href="http://en.wikipedia.org/wiki/Web_browser" title="Web browser">web browser</a>) to provide objects and methods by which scripts can interact with the environment (e.g. a webpage DOM). It also relies on the run-time environment to provide the ability to include/import scripts (e.g. <a href="http://en.wikipedia.org/wiki/HTML" title="HTML">HTML</a> <code>&lt;script&gt;</code> elements). This is not a language feature per se, but it is common in most JavaScript implementations.</dd>
+<dt>Variadic functions</dt>
+<dd>An indefinite number of parameters can be passed to a function. The function can access them through <a href="http://en.wikipedia.org/wiki/Formal_parameter" title="Formal parameter" class="mw-redirect">formal parameters</a> and also through the local <code>arguments</code> object. <a href="http://en.wikipedia.org/wiki/Variadic_functions" title="Variadic functions" class="mw-redirect">Variadic functions</a> can also be created by using the <code>apply</code> method.</dd>
+<dt>Array and object literals</dt>
+<dd>Like many scripting languages, arrays and objects (<a href="http://en.wikipedia.org/wiki/Associative_arrays" title="Associative arrays" class="mw-redirect">associative arrays</a> in other languages) can each be created with a succinct shortcut syntax. In fact, these <a href="http://en.wikipedia.org/wiki/Object_literal" title="Object literal" class="mw-redirect">literals</a> form the basis of the <a href="http://en.wikipedia.org/wiki/JSON" title="JSON">JSON</a> data format.</dd>
+<dt>Regular expressions</dt>
+<dd>JavaScript also supports <a href="http://en.wikipedia.org/wiki/Regular_expression" title="Regular expression">regular expressions</a> in a manner similar to <a href="http://en.wikipedia.org/wiki/Perl" title="Perl">Perl</a>, which provide a concise and powerful syntax for text manipulation that is more sophisticated than the built-in string functions.</dd>
+</dl>
+
+<h3 class="affixnav-header level2">Vendor-specific extensions</h3>
+<p>JavaScript is officially managed by <a href="http://en.wikipedia.org/wiki/Mozilla_Foundation" title="Mozilla Foundation">Mozilla Foundation</a>, and new language features are added periodically. However, only some <a href="http://en.wikipedia.org/wiki/JavaScript_engine" title="JavaScript engine">JavaScript engines</a> support these new features:</p>
+<ul>
+<li>property getter and setter functions (supported by WebKit, Opera, ActionScript, and Rhino)</li>
+<li>conditional <code>catch</code> clauses</li>
+<li>iterator protocol (adopted from <a href="http://en.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>)</li>
+<li>shallow <a href="http://en.wikipedia.org/wiki/Generator_(computer_programming)" title="Generator (computer programming)">generators</a>-<a href="http://en.wikipedia.org/wiki/Coroutine" title="Coroutine">coroutines</a> (adopted from Python)</li>
+<li><a href="http://en.wikipedia.org/wiki/List_comprehension" title="List comprehension">array comprehensions</a> and generator expressions (adopted from Python)</li>
+<li>proper block scope via the <code>let</code> keyword</li>
+<li>array and object destructuring (limited form of <a href="http://en.wikipedia.org/wiki/Pattern_matching" title="Pattern matching">pattern matching</a>)</li>
+<li>concise function expressions (<code>function(args) expr</code>)</li>
+<li><a href="http://en.wikipedia.org/wiki/ECMAScript_for_XML" title="ECMAScript for XML">ECMAScript for XML</a> (E4X), an extension that adds native XML support to ECMAScript</li>
+</ul>
+
+<h2 class="affixnav-header level1">Syntax</h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/JavaScript_syntax" title="JavaScript syntax">JavaScript syntax</a></div>
+<p>As of 2011, the latest version of the language is JavaScript 1.8.5. It is a superset of ECMAScript (ECMA-262) Edition 3. Extensions to the language, including partial <a href="http://en.wikipedia.org/wiki/ECMAScript_for_XML" title="ECMAScript for XML">ECMAScript for XML</a> (E4X) (ECMA-357) support and experimental features considered for inclusion into future ECMAScript editions, are documented here.</p>
+
+<h3 class="affixnav-header level2">Simple examples</h3>
+<p><a href="http://en.wikipedia.org/wiki/Variable_(computer_science)" title="Variable (computer science)">Variables</a> in JavaScript can be defined using the <code>var</code> keyword:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> x<span class="sy0">;</span> <span class="co1">//defines the variable x, although no value is assigned to it by default</span>
+<span class="kw1">var</span> y <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span> <span class="co1">//defines the variable y and assigns the value of 2 to it</span>
+</pre></div>
+</div>
+<p>Note the <a href="http://en.wikipedia.org/wiki/Comment_(computer_programming)" title="Comment (computer programming)">comments</a> in the example above, both of which were preceded with two <a href="http://en.wikipedia.org/wiki/Slash_(punctuation)" title="Slash (punctuation)">forward slashes</a>.</p>
+<p>There is no built-in <a href="http://en.wikipedia.org/wiki/Input/output" title="Input/output">I/O</a> functionality in JavaScript; the runtime environment provides that. The ECMAScript specification in edition 5.1 mentions:</p>
+<blockquote>
+<p>... indeed, there are no provisions in this specification for input of external data or output of computed results.</p>
+</blockquote>
+<p>However, most runtime environments have a <code>console</code> object that can be used to print output. Here is a minimalist <a href="http://en.wikipedia.org/wiki/Hello_World_program" title="Hello World program" class="mw-redirect">Hello World program</a>:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+console.<span class="me1">log</span><span class="br0">(</span><span class="st0">"Hello world!"</span><span class="br0">)</span><span class="sy0">;</span>
+</pre></div>
+</div>
+<p>A simple <a href="http://en.wikipedia.org/wiki/Recursion_(computer_science)" title="Recursion (computer science)">recursive</a> function:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">function</span> factorial<span class="br0">(</span>n<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span> <span class="br0">(</span>n <span class="sy0">===</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">return</span> <span class="nu0">1</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">return</span> n <span class="sy0">*</span> factorial<span class="br0">(</span>n <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><a href="http://en.wikipedia.org/wiki/Anonymous_function" title="Anonymous function">Anonymous function</a> (or lambda) syntax and <a href="http://en.wikipedia.org/wiki/Closure_(Computer_Science)" title="Closure (Computer Science)" class="mw-redirect">closure</a> example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> displayClosure <span class="sy0">=</span> <span class="kw1">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">var</span> count <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+    <span class="kw1">return</span> <span class="kw1">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">return</span> <span class="sy0">++</span>count<span class="sy0">;</span>
+    <span class="br0">}</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="kw1">var</span> inc <span class="sy0">=</span> displayClosure<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+inc<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// returns 1</span>
+inc<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// returns 2</span>
+inc<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// returns 3</span>
+</pre></div>
+</div>
+<p><a href="http://en.wikipedia.org/wiki/Variadic_function" title="Variadic function">Variadic function</a> demonstration (<tt>arguments</tt> is a special <a href="http://en.wikipedia.org/wiki/Variable_(programming)" title="Variable (programming)" class="mw-redirect">variable</a>).</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> sum <span class="sy0">=</span> <span class="kw1">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">var</span> i<span class="sy0">,</span> x <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> arguments.<span class="me1">length</span><span class="sy0">;</span> <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+        x <span class="sy0">+=</span> arguments<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">return</span> x<span class="sy0">;</span>
+<span class="br0">}</span>
+sum<span class="br0">(</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// returns 6</span>
+</pre></div>
+</div>
+<p><a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression" title="Immediately-invoked function expression">Immediately-invoked function expressions</a> allow functions to pass around variables under their own closures.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="javascript source-javascript">
+<pre class="de1">
+<span class="kw1">var</span> v<span class="sy0">;</span>
+v <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+<span class="kw1">var</span> getValue <span class="sy0">=</span> <span class="br0">(</span><span class="kw1">function</span><span class="br0">(</span>v<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">return</span> <span class="kw1">function</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="kw1">return</span> v<span class="sy0">;</span><span class="br0">}</span><span class="sy0">;</span>
+<span class="br0">}</span><span class="br0">)</span><span class="br0">(</span>v<span class="br0">)</span><span class="sy0">;</span>
+v <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span>
+getValue<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// 1</span>
+</pre></div>
+</div>
+
+<h2 class="affixnav-header level1">Use in web pages</h2>
+<div class="hatnote boilerplate seealso">See also: <a href="http://en.wikipedia.org/wiki/JavaScript_engine" title="JavaScript engine">JavaScript engine</a> and <a href="http://en.wikipedia.org/wiki/Ajax_(programming)" title="Ajax (programming)">Ajax (programming)</a></div>
+<p>The most common use of JavaScript is to write functions that are embedded in or included from <a href="http://en.wikipedia.org/wiki/HTML" title="HTML">HTML</a> pages and that interact with the <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">Document Object Model</a> (DOM) of the page. Some simple examples of this usage are:</p>
+<ul>
+<li>Loading new page content or submitting data to the server via <a href="http://en.wikipedia.org/wiki/AJAX" title="AJAX" class="mw-redirect">AJAX</a> without reloading the page (for example, a social network might allow the user to post status updates without leaving the page)</li>
+<li>Animation of page elements, fading them in and out, resizing them, moving them, etc.</li>
+<li>Interactive content, for example games, and playing audio and video</li>
+<li><a href="http://en.wikipedia.org/wiki/Data_validation" title="Data validation">Validating</a> input values of a <a href="http://en.wikipedia.org/wiki/Form_(web)" title="Form (web)" class="mw-redirect">web form</a> to make sure that they are acceptable before being submitted to the server.</li>
+<li>Transmitting information about the user's reading habits and browsing activities to various websites. Web pages frequently do this for <a href="http://en.wikipedia.org/wiki/Web_analytics" title="Web analytics">web analytics</a>, <a href="http://en.wikipedia.org/wiki/Ad_tracking" title="Ad tracking" class="mw-redirect">ad tracking</a>, <a href="http://en.wikipedia.org/wiki/Personalization" title="Personalization">personalization</a> or other purposes.</li>
+</ul>
+<p>Because JavaScript code can run locally in a user's browser (rather than on a remote server), the browser can respond to user actions quickly, making an application more responsive. Furthermore, JavaScript code can detect user actions which HTML alone cannot, such as individual keystrokes. Applications such as <a href="http://en.wikipedia.org/wiki/Gmail" title="Gmail">Gmail</a> take advantage of this: much of the user-interface logic is written in JavaScript, and JavaScript dispatches requests for information (such as the content of an e-mail message) to the server. The wider trend of <a href="http://en.wikipedia.org/wiki/Ajax_(programming)" title="Ajax (programming)">Ajax</a> programming similarly exploits this strength.</p>
+<p>A <a href="http://en.wikipedia.org/wiki/JavaScript_engine" title="JavaScript engine">JavaScript engine</a> (also known as <i>JavaScript interpreter</i> or <i>JavaScript implementation</i>) is an <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)" title="Interpreter (computing)">interpreter</a> that interprets JavaScript <a href="http://en.wikipedia.org/wiki/Source_code" title="Source code">source code</a> and executes the <a href="http://en.wikipedia.org/wiki/Computer_program" title="Computer program">script</a> accordingly. The first JavaScript engine was created by <a href="http://en.wikipedia.org/wiki/Brendan_Eich" title="Brendan Eich">Brendan Eich</a> at <a href="http://en.wikipedia.org/wiki/Netscape_Communications_Corporation" title="Netscape Communications Corporation" class="mw-redirect">Netscape Communications Corporation</a>, for the <a href="http://en.wikipedia.org/wiki/Netscape_Navigator" title="Netscape Navigator">Netscape Navigator</a> <a href="http://en.wikipedia.org/wiki/Web_browser" title="Web browser">web browser</a>. The engine, code-named <a href="http://en.wikipedia.org/wiki/SpiderMonkey_(JavaScript_engine)" title="SpiderMonkey (JavaScript engine)">SpiderMonkey</a>, is implemented in <a href="http://en.wikipedia.org/wiki/C_(programming_language)" title="C (programming language)">C</a>. It has since been updated (in JavaScript 1.5) to conform to ECMA-262 Edition 3. The <a href="http://en.wikipedia.org/wiki/Rhino_(JavaScript_engine)" title="Rhino (JavaScript engine)">Rhino</a> engine, created primarily by Norris Boyd (formerly of Netscape; now at Google) is a JavaScript implementation in <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>. Rhino, like SpiderMonkey, is ECMA-262 Edition 3 compliant.</p>
+<p>A web browser is by far the most common host environment for JavaScript. Web browsers typically create "host objects" to represent the <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">Document Object Model</a> (DOM) in JavaScript. The <a href="http://en.wikipedia.org/wiki/Web_server" title="Web server">web server</a> is another common host environment. A <a href="http://en.wikipedia.org/wiki/Server-side_JavaScript" title="Server-side JavaScript" class="mw-redirect">JavaScript webserver</a> would typically expose host objects representing <a href="http://en.wikipedia.org/wiki/HTTP" title="HTTP" class="mw-redirect">HTTP</a> request and response objects, which a JavaScript program could then interrogate and manipulate to dynamically generate web pages.</p>
+<p>Because JavaScript is the only language that the most popular browsers share support for, it has become a <a href="http://en.wikipedia.org/wiki/Target_language_(computing)" title="Target language (computing)" class="mw-redirect">target language</a> for many frameworks in other languages, even though JavaScript was never intended to be such a language. Despite the performance limitations inherent to its dynamic nature, the increasing speed of JavaScript engines has made the language a surprisingly feasible compilation target.</p>
+
+<h3 class="affixnav-header level2">Example script</h3>
+<p>Below is a minimal example of a standards-conforming web page containing JavaScript (using <a href="http://en.wikipedia.org/wiki/HTML" title="HTML">HTML 5</a> syntax) and the <a href="http://en.wikipedia.org/wiki/Document_object_model" title="Document object model" class="mw-redirect">DOM</a>:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="html5 source-html5">
+<pre class="de1">
+<span class="sc0">&lt;!DOCTYPE html&gt;</span>
+<span class="sc2">&lt;<span class="kw2">meta</span> <span class="kw3">charset</span><span class="sy0">=</span><span class="st0">"utf-8"</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">title</span>&gt;</span>Minimal Example<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">title</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">h1</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"header"</span>&gt;</span>This is JavaScript<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h1</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">script</span>&gt;</span>
+    document.body.appendChild(document.createTextNode('Hello World!'));
+    var h1 = document.getElementById('header'); // holds a reference to the <span class="sc2">&lt;<span class="kw2">h1</span>&gt;</span> tag
+    h1 = document.getElementsByTagName('h1')[0]; // accessing the same <span class="sc2">&lt;<span class="kw2">h1</span>&gt;</span> element
+<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">script</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">noscript</span>&gt;</span>Your browser either does not support JavaScript, or has it turned off.<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">noscript</span>&gt;</span>
+</pre></div>
+</div>
+
+<h3 class="affixnav-header level2">Compatibility considerations</h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Web_interoperability" title="Web interoperability">Web interoperability</a></div>
+<p>Because JavaScript runs in widely varying environments, an important part of testing and debugging is to test and verify that the JavaScript works across multiple browsers.</p>
+<p>The DOM interfaces for manipulating web pages are not part of the ECMAScript standard, or of JavaScript itself. Officially, the DOM interfaces are defined by a separate standardization effort by the <a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">W3C</a>; in practice, browser implementations differ from the standards and from each other, and not all browsers execute JavaScript.</p>
+<p>To deal with these differences, JavaScript authors can attempt to write standards-compliant code which will also be executed correctly by most browsers; failing that, they can write code that checks for the presence of certain browser features and behaves differently if they are not available. In some cases, two browsers may both implement a feature but with different behavior, and authors may find it practical to detect what browser is running and change their script's behavior to match. Programmers may also use libraries or toolkits which take browser differences into account.</p>
+<p>Furthermore, scripts may not work for some users. For example, a user may:</p>
+<ul>
+<li>use an old or rare browser with incomplete or unusual DOM support,</li>
+<li>use a <a href="http://en.wikipedia.org/wiki/Personal_digital_assistant" title="Personal digital assistant">PDA</a> or <a href="http://en.wikipedia.org/wiki/Mobile_phone" title="Mobile phone">mobile phone</a> browser which cannot execute JavaScript,</li>
+<li>have JavaScript execution disabled as a security precaution,</li>
+<li>use a speech browser due to, for example, a visual disability.</li>
+</ul>
+<p>To support these users, web authors can try to create pages which <a href="http://en.wikipedia.org/wiki/Fault-tolerant_system" title="Fault-tolerant system" class="mw-redirect">degrade gracefully</a> on user agents (browsers) which do not support the page's JavaScript. In particular, the page should remain usable albeit without the extra features that the JavaScript would have added. An alternative approach that many find preferable is to first author content using basic technologies that work in all browsers, then enhance the content for users that have JavaScript enabled. This is known as <a href="http://en.wikipedia.org/wiki/Progressive_enhancement" title="Progressive enhancement">progressive enhancement</a>.</p>
+
+<h3 class="affixnav-header level2">Accessibility</h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="http://en.wikipedia.org/wiki/Web_accessibility" title="Web accessibility">Web accessibility</a></div>
+<p>Assuming that the user has not disabled its execution, client-side web JavaScript should be written to enhance the experiences of visitors with visual or physical <a href="http://en.wikipedia.org/wiki/Disability" title="Disability">disabilities</a>, and certainly should avoid denying information to these visitors.</p>
+<p><a href="http://en.wikipedia.org/wiki/Screen_reader" title="Screen reader">Screen readers</a>, used by the <a href="http://en.wikipedia.org/wiki/Visual_impairment" title="Visual impairment">blind and partially sighted</a>, can be JavaScript-aware and so may access and read the page DOM after the script has altered it. The HTML should be as concise, navigable and <a href="http://en.wikipedia.org/wiki/Semantic_HTML" title="Semantic HTML">semantically rich</a> as possible whether the scripts have run or not. JavaScript should not be totally reliant on <a href="http://en.wikipedia.org/wiki/Mouse_(computing)" title="Mouse (computing)">mouse</a> or <a href="http://en.wikipedia.org/wiki/Keyboard_(computing)" title="Keyboard (computing)" class="mw-redirect">keyboard</a> specific events because a user may be physically unable to use these input devices. For this reason, device-agnostic events such as <code>onfocus</code> and <code>onchange</code> are preferable to device-centric events such as <code>onmouseover</code> and <code>onkeypress</code> in most cases.</p>
+<p>JavaScript should not be used in a way that is confusing or disorienting to any web user. For example, using script to alter or disable the normal functionality of the browser, such as by changing the way the "back" or "refresh" buttons work, is usually best avoided. Equally, triggering events that the user may not be aware of reduces the user's sense of control as do unexpected scripted changes to the page content.</p>
+<p>Often the process of making a complex web page as accessible as possible becomes a <a href="http://en.wikipedia.org/wiki/Nontrivial" title="Nontrivial" class="mw-redirect">nontrivial</a> problem where issues become matters of debate and opinion, and where compromises are necessary in the end. However, user agents and <a href="http://en.wikipedia.org/wiki/Assistive_technology" title="Assistive technology">assistive technologies</a> are constantly evolving and new guidelines and relevant information are continually being published on the web.</p>
+
+<h2 class="affixnav-header level1">Security</h2>
+<div class="hatnote boilerplate seealso">See also: <a href="http://en.wikipedia.org/wiki/Browser_security" title="Browser security">Browser security</a></div>
+<p>JavaScript and the DOM provide the potential for malicious authors to deliver scripts to run on a client computer via the web. Browser authors contain this risk using two restrictions. First, scripts run in a <a href="http://en.wikipedia.org/wiki/Sandbox_(computer_security)" title="Sandbox (computer security)">sandbox</a> in which they can only perform web-related actions, not general-purpose programming tasks like creating files. Second, scripts are constrained by the <a href="http://en.wikipedia.org/wiki/Same_origin_policy" title="Same origin policy" class="mw-redirect">same origin policy</a>: scripts from one web site do not have access to information such as usernames, passwords, or cookies sent to another site. Most JavaScript-related security bugs are breaches of either the same origin policy or the sandbox.</p>
+<p>There are subsets of general JavaScript — ADsafe, Secure ECMA Script (SES) — that provide greater level of security, especially on code created by third parties (such as advertisements).</p>
+<p><a href="http://en.wikipedia.org/wiki/Content_Security_Policy" title="Content Security Policy">Content Security Policy</a> is the main intended method of ensuring that only trusted code is executed on a web page.</p>
+<div class="hatnote boilerplate seealso">See also: <a href="http://en.wikipedia.org/wiki/Content_Security_Policy" title="Content Security Policy">Content Security Policy</a></div>
+
+<h3 class="affixnav-header level2">Cross-site vulnerabilities</h3>
+<div class="hatnote relarticle mainarticle">Main articles: <a href="http://en.wikipedia.org/wiki/Cross-site_scripting" title="Cross-site scripting">Cross-site scripting</a> and <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" title="Cross-site request forgery">Cross-site request forgery</a></div>
+<p>A common JavaScript-related security problem is <a href="http://en.wikipedia.org/wiki/Cross-site_scripting" title="Cross-site scripting">cross-site scripting</a>, or XSS, a violation of the <a href="http://en.wikipedia.org/wiki/Same_origin_policy" title="Same origin policy" class="mw-redirect">same-origin policy</a>. XSS vulnerabilities occur when an attacker is able to cause a target web site, such as an online banking website, to include a malicious script in the webpage presented to a victim. The script in this example can then access the banking application with the privileges of the victim, potentially disclosing secret information or transferring money without the victim's authorization. A solution to XSS vulnerabilities is to use <i>HTML escaping</i> whenever displaying untrusted data.</p>
+<p>Some browsers include partial protection against <i>reflected</i> XSS attacks, in which the attacker provides a URL including malicious script. However, even users of those browsers are vulnerable to other XSS attacks, such as those where the malicious code is stored in a database. Only correct design of Web applications on the server side can fully prevent XSS.</p>
+<p>XSS vulnerabilities can also occur because of implementation mistakes by browser authors.</p>
+<p>Another cross-site vulnerability is <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" title="Cross-site request forgery">cross-site request forgery</a> or CSRF. In CSRF, code on an attacker's site tricks the victim's browser into taking actions the user didn't intend at a target site (like transferring money at a bank). It works because, if the target site relies only on cookies to authenticate requests, then requests initiated by code on the attacker's site will carry the same legitimate login credentials as requests initiated by the user. In general, the solution to CSRF is to require an authentication value in a hidden form field, and not only in the cookies, to authenticate any request that might have lasting effects. Checking the HTTP Referrer header can also help.</p>
+<p>"JavaScript hijacking" is a type of CSRF attack in which a &lt;script&gt; tag on an attacker's site exploits a page on the victim's site that returns private information such as JSON or JavaScript. Possible solutions include:</p>
+<ul>
+<li>requiring an authentication token in the <a href="http://en.wikipedia.org/wiki/POST_(HTTP)" title="POST (HTTP)">POST</a> and <a href="http://en.wikipedia.org/wiki/GET_(HTTP)" title="GET (HTTP)" class="mw-redirect">GET</a> parameters for any response that returns private information</li>
+<li>using POST and never GET for requests that return private information</li>
+</ul>
+
+<h4 class="affixnav-header level3">Misplaced trust in the client</h4>
+<p>Developers of client-server applications must recognize that untrusted clients may be under the control of attackers. The application author cannot assume that his JavaScript code will run as intended (or at all) because any secret embedded in the code could be extracted by a determined adversary. Some implications are:</p>
+<ul>
+<li>Web site authors cannot perfectly conceal how their JavaScript operates because the raw source code must be sent to the client. The code can be <a href="http://en.wikipedia.org/wiki/Obfuscated_code" title="Obfuscated code" class="mw-redirect">obfuscated</a>, but obfuscation can be reverse-engineered.</li>
+<li>JavaScript form validation only provides convenience for users, not security. If a site verifies that the user agreed to its terms of service, or filters invalid characters out of fields that should only contain numbers, it must do so on the server, not only the client.</li>
+<li>Scripts can be selectively disabled, so JavaScript can't be relied on to prevent operations such as right-clicking on an image to save it.</li>
+<li>It is extremely bad practice to embed sensitive information such as passwords in JavaScript because it can be extracted by an attacker.</li>
+</ul>
+
+<h4 class="affixnav-header level3">Browser and plugin coding errors</h4>
+<p>JavaScript provides an interface to a wide range of browser capabilities, some of which may have flaws such as <a href="http://en.wikipedia.org/wiki/Buffer_overflow" title="Buffer overflow">buffer overflows</a>. These flaws can allow attackers to write scripts which would run any code they wish on the user's system. This code is not by any means limited to another JavaScript application. For example, a buffer overrun exploit can allow an attacker to gain access to the operating system's API with superuser privileges.</p>
+<p>These flaws have affected major browsers including Firefox, Internet Explorer, and Safari.</p>
+<p>Plugins, such as video players, <a href="http://en.wikipedia.org/wiki/Adobe_Flash#Flash_client_security" title="Adobe Flash">Adobe Flash</a>, and the wide range of <a href="http://en.wikipedia.org/wiki/ActiveX" title="ActiveX">ActiveX</a> controls enabled by default in Microsoft Internet Explorer, may also have flaws exploitable via JavaScript (such flaws have been exploited in the past).</p>
+<p>In Windows Vista, Microsoft has attempted to contain the risks of bugs such as buffer overflows by running the Internet Explorer process with limited privileges. <a href="http://en.wikipedia.org/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a> similarly confines its page renderers to their own "sandbox".</p>
+
+<h4 class="affixnav-header level3">Sandbox implementation errors</h4>
+<p>Web browsers are capable of running JavaScript outside of the sandbox, with the privileges necessary to, for example, create or delete files. Of course, such privileges aren't meant to be granted to code from the web.</p>
+<p>Incorrectly granting privileges to JavaScript from the web has played a role in vulnerabilities in both Internet Explorer and Firefox. In Windows XP Service Pack 2, Microsoft demoted JScript's privileges in Internet Explorer.</p>
+<p><a href="http://en.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a> allows JavaScript source files on a computer's hard drive to be launched as general-purpose, non-sandboxed programs (see: <a href="http://en.wikipedia.org/wiki/Windows_Script_Host" title="Windows Script Host">Windows Script Host</a>). This makes JavaScript (like <a href="http://en.wikipedia.org/wiki/VBScript" title="VBScript">VBScript</a>) a theoretically viable vector for a <a href="http://en.wikipedia.org/wiki/Trojan_horse_(computing)" title="Trojan horse (computing)">Trojan horse</a>, although JavaScript Trojan horses are uncommon in practice.</p>
+
+<h2 class="affixnav-header level1">Uses outside web pages</h2>
+<p>In addition to web browsers and servers, JavaScript interpreters are embedded in a number of tools. Each of these applications provides its own <a href="http://en.wikipedia.org/wiki/Object_model" title="Object model">object model</a> which provides access to the host environment. The core JavaScript language remains mostly the same in each application.</p>
+
+<h3 class="affixnav-header level2">Embedded scripting language</h3>
+<ul>
+<li>Google's <a href="http://en.wikipedia.org/wiki/Google_Chrome" title="Google Chrome">Chrome</a> extensions, <a href="http://en.wikipedia.org/wiki/Opera" title="Opera">Opera</a>'s extensions, Apple's <a href="http://en.wikipedia.org/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari 5</a> extensions, Apple's <a href="http://en.wikipedia.org/wiki/Dashboard_(Mac_OS)" title="Dashboard (Mac OS)">Dashboard Widgets</a>, Microsoft's <a href="http://en.wikipedia.org/wiki/Microsoft_Gadgets" title="Microsoft Gadgets">Gadgets</a>, <a href="http://en.wikipedia.org/wiki/Yahoo!_Widgets" title="Yahoo! Widgets">Yahoo! Widgets</a>, <a href="http://en.wikipedia.org/wiki/Google_Desktop#Gadgets_and_plug-ins" title="Google Desktop">Google Desktop Gadgets</a>, and <a href="http://en.wikipedia.org/wiki/Serence" title="Serence" class="mw-redirect">Serence</a> <a href="http://en.wikipedia.org/wiki/Klipfolio" title="Klipfolio" class="mw-redirect">Klipfolio</a> are implemented using JavaScript.</li>
+<li>Adobe's <a href="http://en.wikipedia.org/wiki/Adobe_Acrobat#Security" title="Adobe Acrobat">Acrobat and Adobe Reader</a> support JavaScript in <a href="http://en.wikipedia.org/wiki/Portable_Document_Format" title="Portable Document Format">PDF</a> files.</li>
+<li>Tools in the <a href="http://en.wikipedia.org/wiki/Adobe_Creative_Suite" title="Adobe Creative Suite">Adobe Creative Suite</a>, including <a href="http://en.wikipedia.org/wiki/Adobe_Photoshop" title="Adobe Photoshop">Photoshop</a>, <a href="http://en.wikipedia.org/wiki/Adobe_Illustrator" title="Adobe Illustrator">Illustrator</a>, <a href="http://en.wikipedia.org/wiki/Dreamweaver" title="Dreamweaver" class="mw-redirect">Dreamweaver</a>, and <a href="http://en.wikipedia.org/wiki/InDesign" title="InDesign" class="mw-redirect">InDesign</a>, allow scripting through JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/OpenOffice.org" title="OpenOffice.org">OpenOffice.org</a>, an office application suite, allows JavaScript to be used as a scripting language.</li>
+<li>The interactive music signal processing software <a href="http://en.wikipedia.org/wiki/Max/MSP" title="Max/MSP" class="mw-redirect">Max/MSP</a> released by Cycling '74, offers a JavaScript model of its environment for use by developers. It allows much more precise control than the default GUI-centric programming model.</li>
+<li>Apple's Logic Pro X digital audio workstation (DAW) software can create custom MIDI effects plugins using JavaScript.</li>
+<li>ECMAScript was included in the <a href="http://en.wikipedia.org/wiki/VRML" title="VRML">VRML</a>97 standard for scripting nodes of VRML scene description files.</li>
+<li><a href="/w/index.php?title=Sphere_(program)&amp;action=edit&amp;redlink=1" class="new" title="Sphere (program) (page does not exist)">Sphere</a> is an open-source and cross-platform computer program designed primarily to make role-playing games that use JavaScript as a scripting language.</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Open-source_software" title="Open-source software">open-source</a> <i>Re-Animator</i> framework allows developing 2D sprite-based games using JavaScript and XML.</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Unity_(game_engine)" title="Unity (game engine)">Unity</a> game engine supports a modified version of JavaScript for scripting via Mono.</li>
+<li><a href="http://en.wikipedia.org/wiki/DX_Studio" title="DX Studio">DX Studio (3D engine)</a> uses the <a href="http://en.wikipedia.org/wiki/SpiderMonkey_(JavaScript_engine)" title="SpiderMonkey (JavaScript engine)">SpiderMonkey</a> implementation of JavaScript for game and simulation logic.</li>
+<li><a href="http://en.wikipedia.org/wiki/Maxwell_Render" title="Maxwell Render">Maxwell Render</a> (<a href="http://en.wikipedia.org/wiki/Rendering_(computer_graphics)" title="Rendering (computer graphics)">rendering</a> software) provides an ECMA standard based scripting engine for tasks automation.</li>
+<li><a href="http://en.wikipedia.org/wiki/Google_Apps_Script" title="Google Apps Script">Google Apps Script</a> in <a href="http://en.wikipedia.org/wiki/Google_Spreadsheets" title="Google Spreadsheets">Google Spreadsheets</a> and <a href="http://en.wikipedia.org/wiki/Google_Sites" title="Google Sites">Google Sites</a> allows users to create custom formulas, automate repetitive tasks and also interact with other Google products such as Gmail.</li>
+<li>Many <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat_clients" title="Internet Relay Chat clients" class="mw-redirect">IRC clients</a>, like <a href="http://en.wikipedia.org/wiki/ChatZilla" title="ChatZilla">ChatZilla</a> or <a href="http://en.wikipedia.org/wiki/XChat" title="XChat">XChat</a>, use JavaScript for their scripting abilities.</li>
+<li>SpinetiX products use the <a href="http://en.wikipedia.org/wiki/SpiderMonkey_(JavaScript_engine)" title="SpiderMonkey (JavaScript engine)">SpiderMonkey</a> JavaScript engine to allow scripting within SVG files to create digital signage projects.</li>
+<li><a href="/w/index.php?title=Cloud_Party&amp;action=edit&amp;redlink=1" class="new" title="Cloud Party (page does not exist)">Cloud Party</a> virtual world uses a limited version of JavaScript/ECMAScript 5 as in-world scripting language.</li>
+</ul>
+
+<h3 class="affixnav-header level2">Scripting engine</h3>
+<ul>
+<li>Microsoft's <a href="http://en.wikipedia.org/wiki/Active_Scripting" title="Active Scripting">Active Scripting</a> technology supports <a href="http://en.wikipedia.org/wiki/JScript" title="JScript">JScript</a> as a scripting language.</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Java_programming_language" title="Java programming language" class="mw-redirect">Java programming language</a> introduced the <code>javax.script</code> package in version 6 that includes a JavaScript implementation based on <a href="http://en.wikipedia.org/wiki/Rhino_(JavaScript_engine)" title="Rhino (JavaScript engine)">Mozilla Rhino</a>. Thus, Java applications can host scripts that access the application's variables and objects, much like web browsers host scripts that access a webpage's <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">Document Object Model</a> (DOM).</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Qt_(toolkit)" title="Qt (toolkit)" class="mw-redirect">Qt</a> C++ toolkit includes a <code>QtScript</code> module to interpret JavaScript, analogous to Java's <code>javax.script</code> package.</li>
+<li><i>JSDB</i> (JavaScript for Databases) is an <a href="http://en.wikipedia.org/wiki/Open-source_software" title="Open-source software">open-source</a> JavaScript shell for Windows, Mac OS X, Linux, and Unix, which extends the <a href="http://en.wikipedia.org/wiki/SpiderMonkey" title="SpiderMonkey" class="mw-redirect">Mozilla JavaScript engine</a> with file, database, email, and network objects.</li>
+<li><i>jslibs</i> is an open-source JavaScript shell for Windows and Linux which extends the <a href="http://en.wikipedia.org/wiki/SpiderMonkey" title="SpiderMonkey" class="mw-redirect">Mozilla JavaScript engine</a>. It has the ability to call functions in commonly used libraries like NSPR, SQLite, libTomCrypt, OpenGL, OpenAL, and librsvg.</li>
+<li>Late Night Software's <a href="http://en.wikipedia.org/wiki/JavaScript_OSA" title="JavaScript OSA">JavaScript OSA</a> (aka JavaScript for OSA, or JSOSA) is a freeware alternative to <a href="http://en.wikipedia.org/wiki/AppleScript" title="AppleScript">AppleScript</a> for Mac OS X. It is based on the Mozilla 1.5 JavaScript implementation, with the addition of a <code>MacOS</code> object for interaction with the operating system and third-party applications.</li>
+</ul>
+
+<h3 class="affixnav-header level2">Application platform</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/ActionScript" title="ActionScript">ActionScript</a>, the programming language used in <a href="http://en.wikipedia.org/wiki/Adobe_Flash" title="Adobe Flash">Adobe Flash</a>, is another implementation of the ECMAScript standard.</li>
+<li><a href="http://en.wikipedia.org/wiki/Adobe_Integrated_Runtime" title="Adobe Integrated Runtime">Adobe Integrated Runtime</a> is a JavaScript runtime that allows developers to create desktop applications.</li>
+<li><a href="http://en.wikipedia.org/wiki/CA,_Inc." title="CA, Inc." class="mw-redirect">CA, Inc.</a>'s AutoShell cross-application scripting environment is built on the <a href="http://en.wikipedia.org/wiki/SpiderMonkey_(JavaScript_engine)" title="SpiderMonkey (JavaScript engine)">SpiderMonkey</a> Javascript engine. It contains <a href="http://en.wikipedia.org/wiki/Preprocessor" title="Preprocessor">preprocessor</a>-like extensions for command definition, as well as custom classes for various system-related tasks like file I/O, operation system command invocation and redirection, and COM scripting.</li>
+<li><a href="http://en.wikipedia.org/wiki/GNOME_Shell" title="GNOME Shell">GNOME Shell</a>, the shell for the <span class="nowrap"><a href="http://en.wikipedia.org/wiki/GNOME" title="GNOME">GNOME 3</a></span> desktop environment, made JavaScript its default programming language in 2013.</li>
+<li>The <a href="http://en.wikipedia.org/wiki/Mozilla" title="Mozilla">Mozilla</a> platform, which underlies <a href="http://en.wikipedia.org/wiki/Firefox" title="Firefox">Firefox</a>, <a href="http://en.wikipedia.org/wiki/Mozilla_Thunderbird" title="Mozilla Thunderbird">Thunderbird</a>, and some other web browsers, uses JavaScript to implement the <a href="http://en.wikipedia.org/wiki/Graphical_user_interface" title="Graphical user interface">graphical user interface</a> (GUI) of its various products.</li>
+<li><a href="http://en.wikipedia.org/wiki/Digital_Airways" title="Digital Airways">myNFC</a> is a JavaScript based framework that allows developers to create applications for smart phones.</li>
+<li><a href="http://en.wikipedia.org/wiki/Qt_Quick" title="Qt Quick">Qt Quick</a>'s markup language (available since Qt 4.7) uses JavaScript for its application logic. Its declarative syntax is also similar to JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a> is a programming language based on JavaScript that adds support for optional <a href="http://en.wikipedia.org/wiki/Type_annotation" title="Type annotation" class="mw-redirect">type annotations</a> and some other language extensions such as classes, interfaces and modules. A TS-script compiles into plain JavaScript and can be executed in any JS host supporting <a href="http://en.wikipedia.org/wiki/ECMAScript" title="ECMAScript">ECMAScript 3</a> or higher. The compiler is itself written in TypeScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/Ubuntu_Touch" title="Ubuntu Touch">Ubuntu Touch</a> provides a JavaScript API for its unified usability interface.</li>
+<li><a href="http://en.wikipedia.org/wiki/WebOS" title="WebOS">webOS</a> uses the <a href="http://en.wikipedia.org/wiki/WebKit" title="WebKit">WebKit</a> implementation of JavaScript in its <a href="http://en.wikipedia.org/wiki/Software_development_kit" title="Software development kit">SDK</a> to allow developers to create stand-alone applications solely in JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/Windows_Runtime#JavaScript" title="Windows Runtime">WinJS</a> provides a special Windows Library for JavaScript functionality in <a href="http://en.wikipedia.org/wiki/Windows_8" title="Windows 8">Windows 8</a> that enables the development of <a href="http://en.wikipedia.org/wiki/Metro_(design_language)" title="Metro (design language)">Modern style</a> (formerly <i>Metro style</i>) applications in <a href="http://en.wikipedia.org/wiki/HTML5" title="HTML5">HTML5</a> and JavaScript.</li>
+</ul>
+
+<h2 class="affixnav-header level1">Development tools</h2>
+<p>Within JavaScript, access to a <a href="http://en.wikipedia.org/wiki/Debugger" title="Debugger">debugger</a> becomes invaluable when developing large, non-trivial programs. Because there can be implementation differences between the various browsers (particularly within the <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">Document Object Model</a>), it is useful to have access to a debugger for each of the browsers that a web application targets.</p>
+<p>Script debuggers are available for <a href="http://en.wikipedia.org/wiki/Internet_Explorer" title="Internet Explorer">Internet Explorer</a>, <a href="http://en.wikipedia.org/wiki/Firefox" title="Firefox">Firefox</a>, <a href="http://en.wikipedia.org/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a>, <a href="http://en.wikipedia.org/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a>, <a href="http://en.wikipedia.org/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a> and <a href="http://en.wikipedia.org/wiki/Node.js" title="Node.js">Node.js</a></p>
+<p>Three debuggers are available for Internet Explorer: <a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio" title="Microsoft Visual Studio">Microsoft Visual Studio</a> is the richest of the three, closely followed by <a href="http://en.wikipedia.org/wiki/Microsoft_Script_Editor" title="Microsoft Script Editor">Microsoft Script Editor</a> (a component of <a href="http://en.wikipedia.org/wiki/Microsoft_Office" title="Microsoft Office">Microsoft Office</a>), and finally the free <a href="http://en.wikipedia.org/wiki/Microsoft_Script_Debugger" title="Microsoft Script Debugger">Microsoft Script Debugger</a> which is far more basic than the other two. The free <a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Web_Developer_Express" title="Microsoft Visual Web Developer Express" class="mw-redirect">Microsoft Visual Web Developer Express</a> provides a limited version of the JavaScript debugging functionality in Microsoft Visual Studio. Internet Explorer has included developer tools since version 8 (reached by pressing the F12 key).</p>
+<p>Web applications within Firefox can be debugged using the <a href="http://en.wikipedia.org/wiki/Firebug_(Firefox_extension)" title="Firebug (Firefox extension)" class="mw-redirect">Firebug</a> add-on, or the older <a href="http://en.wikipedia.org/wiki/Venkman" title="Venkman">Venkman</a> debugger. Firefox also has a simpler built-in Error Console, which logs and evaluates JavaScript. It also logs <a href="http://en.wikipedia.org/wiki/CSS" title="CSS" class="mw-redirect">CSS</a> errors and warnings.</p>
+<p><a href="http://en.wikipedia.org/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a> includes a set of tools called <a href="http://en.wikipedia.org/wiki/Opera_Dragonfly" title="Opera Dragonfly">Dragonfly</a>.</p>
+<p><a href="http://en.wikipedia.org/wiki/WebKit" title="WebKit">WebKit</a>'s Web Inspector includes a JavaScript debugger, which is used in <a href="http://en.wikipedia.org/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a>. A modified version called Blink DevTools is used in <a href="http://en.wikipedia.org/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a>.</p>
+<p><a href="http://en.wikipedia.org/wiki/Node.js" title="Node.js">Node.js</a> has node-inspector, an interactive debugger that integrates with the Blink DevTools, available in <a href="http://en.wikipedia.org/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a>.</p>
+<p>Some debugging aids are themselves written in JavaScript and built to run on the Web. An example is the program <a href="http://en.wikipedia.org/wiki/JSLint" title="JSLint">JSLint</a>, developed by <a href="http://en.wikipedia.org/wiki/Douglas_Crockford" title="Douglas Crockford">Douglas Crockford</a> who has written extensively on the language. JSLint scans JavaScript code for conformance to a set of standards and guidelines.</p>
+
+<h2 class="affixnav-header level1">Version history</h2>
+<div class="hatnote boilerplate seealso">See also: <a href="http://en.wikipedia.org/wiki/ECMAScript#Dialects" title="ECMAScript">ECMAScript § Dialects</a> and <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence" title="ECMAScript">ECMAScript § Version correspondence</a></div>
+<p>The following table is based on information from multiple sources.</p>
+<table class="wikitable" style="text-align:center;">
+<tr>
+<th>Version</th>
+<th>Release date</th>
+<th>Equivalent to</th>
+<th>Netscape<br />
+Navigator</th>
+<th>Mozilla<br />
+Firefox</th>
+<th>Internet<br />
+Explorer</th>
+<th>Opera</th>
+<th>Safari</th>
+<th>Google<br />
+Chrome</th>
+</tr>
+<tr>
+<td data-sort-value="1.0">1.0</td>
+<td>March 1996</td>
+<td></td>
+<td>2.0</td>
+<td></td>
+<td>3.0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.1">1.1</td>
+<td>August 1996</td>
+<td></td>
+<td>3.0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.2">1.2</td>
+<td>June 1997</td>
+<td></td>
+<td>4.0-4.05</td>
+<td></td>
+<td></td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.3">1.3</td>
+<td>October 1998</td>
+<td>ECMA-262 1st + 2nd edition</td>
+<td>4.06-4.7x</td>
+<td></td>
+<td>4.0</td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.4">1.4</td>
+<td></td>
+<td></td>
+<td>Netscape<br />
+Server</td>
+<td></td>
+<td></td>
+<td>6</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.5">1.5</td>
+<td>November 2000</td>
+<td>ECMA-262 3rd edition</td>
+<td>6.0</td>
+<td>1.0</td>
+<td>5.5 (JScript 5.5),<br />
+6 (JScript 5.6),<br />
+7 (JScript 5.7),<br />
+8 (JScript 5.8)</td>
+<td>7.0</td>
+<td>3.0-5</td>
+<td>1.0-10.0.666</td>
+</tr>
+<tr>
+<td data-sort-value="1.6">1.6</td>
+<td>November 2005</td>
+<td>1.5 + array extras + array and string generics + <a href="http://en.wikipedia.org/wiki/E4X" title="E4X" class="mw-redirect">E4X</a></td>
+<td></td>
+<td>1.5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.7">1.7</td>
+<td>October 2006</td>
+<td>1.6 + <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en-US/docs/JavaScript/New_in_JavaScript/1.7?redirectlocale=en-US&amp;redirectslug=New_in_JavaScript_1.7#Generators">Pythonic generators</a> + iterators + let</td>
+<td></td>
+<td>2.0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>28.0.1500.95</td>
+</tr>
+<tr>
+<td data-sort-value="1.8">1.8</td>
+<td>June 2008</td>
+<td>1.7 + <a href="http://en.wikipedia.org/wiki/Generator_(computer_programming)" title="Generator (computer programming)">generator expressions</a> + <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)" title="Closure (computer science)" class="mw-redirect">expression closures</a></td>
+<td></td>
+<td>3.0</td>
+<td></td>
+<td>11.50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.8.1">1.8.1</td>
+<td></td>
+<td>1.8 + <a href="http://en.wikipedia.org/wiki/JSON#Native_encoding_and_decoding_in_browsers" title="JSON">native JSON</a> support + minor updates</td>
+<td></td>
+<td>3.5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.8.2">1.8.2</td>
+<td>June 22, 2009</td>
+<td>1.8.1 + minor updates</td>
+<td></td>
+<td>3.6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sort-value="1.8.5">1.8.5</td>
+<td>July 27, 2010</td>
+<td>1.8.2 + <a href="http://en.wikipedia.org/wiki/ECMAScript" title="ECMAScript">ECMAScript</a> 5 compliance</td>
+<td></td>
+<td>4</td>
+<td>9</td>
+<td>11.60</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+<h2 class="affixnav-header level1">Criticisms</h2>
+<p>Critique of any computer programming language primarily centers on three pivotal points:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Software_bug" title="Software bug">Bugs</a> management
+<ol>
+<li>How easily does the language allow the introduction of bugs?</li>
+<li>How difficult are the bugs to locate or detect?</li>
+<li>How difficult are the bug fixes to implement?</li>
+</ol>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Code_integrity" title="Code integrity">Code safety</a> and discipline
+<ol>
+<li>How much effort is on programmer discipline? (manual/testing)</li>
+<li>How much effort is on the compiler? (automation)</li>
+</ol>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Software_quality" title="Software quality">Software quality factors</a>
+<ol>
+<li>How well does the language achieve consummation of the quality factors (internal/external)?</li>
+</ol>
+</li>
+</ul>
+<p>JavaScript is a loosely typed language (see Dynamic typing above). Loose typing places a majority responsibility for static type management on programmer discipline, very little on the compiler, and late reporting of type safety violation on the run-time. The result is a development environment where type bugs can be easily introduced due to human fallibility. The bugs may be difficult to detect or may go undetected by the run-time for several reasons:</p>
+<ul>
+<li>Bugs may never be detected due to host code never being exercised.</li>
+<li>Bugs may not be detected due to unreachable host code.</li>
+<li>Bugs may not be detected due to not meeting governing business rules, even though technically correctly typed.</li>
+</ul>
+<p>Criticism based on loose typing then cautions programmers to be aware of the need for greater programmer discipline and project schedule impact because both detected and undetected bugs increase production time at unpredictable rates.</p>
+
+<h2 class="affixnav-header level1">Related languages and features</h2>
+<p><a href="http://en.wikipedia.org/wiki/JSON" title="JSON">JSON</a>, or JavaScript Object Notation, is a general-purpose data interchange format that is defined as a subset of JavaScript's literal syntax.</p>
+<p><a href="http://en.wikipedia.org/wiki/JQuery" title="JQuery">jQuery</a> is a popular JavaScript library designed to simplify <a href="http://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model">DOM</a>-oriented client-side HTML scripting.</p>
+<p>Mozilla browsers currently support <a href="http://en.wikipedia.org/wiki/LiveConnect" title="LiveConnect">LiveConnect</a>, a feature that allows JavaScript and Java to intercommunicate on the web. However, Mozilla-specific support for LiveConnect is scheduled to be phased out in the future in favor of passing on the LiveConnect handling via <a href="http://en.wikipedia.org/wiki/NPAPI" title="NPAPI">NPAPI</a> to the Java 1.6+ plug-in (not yet supported on the Mac as of March 2010). Most browser inspection tools, such as <a href="http://en.wikipedia.org/wiki/Firebug_(web_development)" title="Firebug (web development)" class="mw-redirect">Firebug</a> in Firefox, include JavaScript interpreters that can act on the visible page's DOM.</p>
+<p><a href="http://en.wikipedia.org/wiki/Asm.js" title="Asm.js">asm.js</a> is a subset of JavaScript that can be run in any JavaScript engine or run faster in an <a href="http://en.wikipedia.org/wiki/Ahead-of-time" title="Ahead-of-time" class="mw-redirect">ahead-of-time</a> (AOT) compiling engine.</p>
+
+<h3 class="affixnav-header level2">Use as an intermediate language</h3>
+<p>As JavaScript is the most widely supported client-side language that can run within a web browser, it has become an <a href="http://en.wikipedia.org/wiki/Intermediate_language" title="Intermediate language">intermediate language</a> for other languages to target. This has included both newly created languages and ports of existing languages. Some of these include:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Objective-J" title="Objective-J">Objective-J</a>, a superset of JavaScript that compiles to standard JavaScript. It adds traditional inheritance and <a href="http://en.wikipedia.org/wiki/Smalltalk" title="Smalltalk">Smalltalk</a>/<a href="http://en.wikipedia.org/wiki/Objective-C" title="Objective-C">Objective-C</a> style dynamic dispatch and optional pseudo-static typing to JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/Processing.js" title="Processing.js">Processing.js</a>, a JavaScript port of Processing, a programming language designed to write visualizations, images, and interactive content. It allows web browsers to display animations, visual applications, games and other graphical rich content without the need for a Java applet or Flash plugin.</li>
+<li><a href="http://en.wikipedia.org/wiki/CoffeeScript" title="CoffeeScript">CoffeeScript</a>, an alternate syntax for JavaScript intended to be more concise and readable. It adds features like array comprehensions (also available in JavaScript since version 1.7) and pattern matching. Like Objective-J, it compiles to JavaScript. Ruby and Python have been cited as influential on CoffeeScript syntax.</li>
+<li><a href="http://en.wikipedia.org/wiki/Google_Web_Toolkit" title="Google Web Toolkit">Google Web Toolkit</a> translates a subset of Java to JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/Scala_(programming_language)" title="Scala (programming language)">Scala</a>, an object-oriented and functional programming language, has an experimental Scala-to-Javascript compiler.</li>
+<li><a href="http://en.wikipedia.org/wiki/Pyjamas_(software)" title="Pyjamas (software)">Pyjamas</a>, a port of <a href="http://en.wikipedia.org/wiki/Google_Web_Toolkit" title="Google Web Toolkit">Google Web Toolkit</a> to <a href="http://en.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> (translates a subset of Python to JavaScript)</li>
+<li><a href="http://en.wikipedia.org/wiki/Dart_(programming_language)" title="Dart (programming language)">Dart</a>, an open-source programming language developed by Google, can be compiled to JavaScript.</li>
+<li>Whalesong, a <a href="http://en.wikipedia.org/wiki/Racket_(programming_language)" title="Racket (programming language)">Racket</a>-to-JavaScript compiler.</li>
+<li><a href="http://en.wikipedia.org/wiki/Emscripten" title="Emscripten">Emscripten</a>, a <a href="http://en.wikipedia.org/wiki/LLVM" title="LLVM">LLVM</a>-backend for porting native libraries to JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/Fantom_(programming_language)" title="Fantom (programming language)">Fantom</a> a programming language that runs on JVM, .NET and JavaScript.</li>
+<li><a href="http://en.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a>, a free and open-source programming language developed by Microsoft. It is a superset of JavaScript, and essentially adds optional static typing and class-based object-oriented programming to the language.</li>
+<li><a href="http://en.wikipedia.org/wiki/Haxe" title="Haxe">Haxe</a>, an open-source high-level multiplatform programming language and compiler that can produce applications and source code for many different platforms including JavaScript.</li>
+<li>ClojureScript, a compiler for <a href="http://en.wikipedia.org/wiki/Clojure" title="Clojure">Clojure</a> that targets JavaScript. It is designed to emit JavaScript code which is compatible with the advanced compilation mode of the Google Closure optimizing compiler.</li>
+<li><a href="http://en.wikipedia.org/wiki/Kotlin_(programming_language)" title="Kotlin (programming language)">Kotlin</a>, a <a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking" title="Type system">statically-typed</a> language that also compiles to <a href="http://en.wikipedia.org/wiki/Java_byte_code" title="Java byte code" class="mw-redirect">Java byte code</a>.</li>
+</ul>
+
+<h3 class="affixnav-header level2">JavaScript and Java</h3>
+<p>A common misconception is that JavaScript is similar or closely related to <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>. It is true that both have a C-like syntax (the C language being their most immediate common ancestor language). They also are both typically <a href="http://en.wikipedia.org/wiki/Sandbox_(computer_security)" title="Sandbox (computer security)">sandboxed</a> (when used inside a browser), and JavaScript was designed with Java's syntax and standard library in mind. In particular, all Java keywords were reserved in original JavaScript, JavaScript's standard library follows Java's naming conventions, and JavaScript's Math and Date objects are based on classes from Java 1.0, but the similarities end there.</p>
+<p>The differences between the two languages are more prominent than their similarities. Java has <a href="http://en.wikipedia.org/wiki/Static_typing" title="Static typing" class="mw-redirect">static typing</a>, while JavaScript's typing is dynamic (meaning a variable can hold an object of any type and cannot be restricted). Java is loaded from compiled bytecode, while JavaScript is loaded as human-readable source code. Java's objects are <a href="http://en.wikipedia.org/wiki/Class-based_programming" title="Class-based programming">class-based</a>, while JavaScript's are <a href="http://en.wikipedia.org/wiki/Prototype-based_programming" title="Prototype-based programming">prototype-based</a>. Finally, Java did not support <a href="http://en.wikipedia.org/wiki/Functional_programming" title="Functional programming">functional programming</a> until Java 8, while JavaScript does, as it contains many features based on the <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)" title="Scheme (programming language)">Scheme language</a>.</p>

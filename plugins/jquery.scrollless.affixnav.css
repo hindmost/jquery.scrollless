@@ -1,0 +1,73 @@
+table.affixnav-wrap td {
+    vertical-align: top;
+}
+
+td.affixnav {
+    width: 180px;
+    padding-left: 15px;
+}
+
+td.affixnav > ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+td.affixnav > ul > li.affixnav-item {
+    color: black;
+    cursor: pointer;
+    padding-left: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+td.affixnav > ul > li.affixnav-item:hover {
+    text-decoration:underline;
+}
+
+td.affixnav > ul > li.affixnav-item.level2 {
+    padding-left: 8px;
+    font-size: 85%;
+}
+td.affixnav > ul > li.affixnav-item.level3 {
+    padding-left: 16px;
+    font-size: 75%;
+}
+td.affixnav > ul > li.affixnav-item.level4 {
+    padding-left: 24px;
+    font-size: 65%;
+}
+td.affixnav > ul > li.affixnav-item.level5 {
+    padding-left: 32px;
+    font-size: 60%;
+}
+
+td.affixnav > ul > li.affixnav-item.affixnav-cursor {
+    color: gray;
+    text-decoration:underline;
+}
+
+td.affixnav > div.affixnav-arrow {
+    text-align: center;
+    visibility: hidden;
+}
+
+td.affixnav > div.affixnav-arrow > span {
+    margin: 0;
+    color: gray;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td.affixnav > div.affixnav-arrow > span.arrow-up::before {
+    content: "\25B2";
+}
+
+td.affixnav > div.affixnav-arrow > span.arrow-down::before {
+    content: "\25BC";
+}

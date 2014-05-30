@@ -1,0 +1,56 @@
+div.pagenav {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+div.pagenav > div {
+    position: relative;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+div.pagenav > div > div {
+    height: 20px;
+    margin: 0;
+    font: normal 14px/20px Helvetica,Arial,sans-serif;
+}
+
+div.pagenav > div > div.pagenav-thumb {
+    width: 50px;
+    float: left;
+    background-color: gray; color: yellow;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.pagenav > div > div.pagenav-thumb, div.pagenav > div > div.pagenav-before-thumb {
+    margin-right: 7px;
+}
+
+div.pagenav > div > div.pagenav-arrow {
+    float: left;
+    visibility: hidden;
+    color: gray;
+    cursor: pointer;
+}
+
+div.pagenav > div > div.pagenav-arrow > span.arrow-left::before {
+    content: "\25C0";
+}
+
+div.pagenav > div > div.pagenav-arrow > span.arrow-right::before {
+    content: "\25B6";
+}
+
+div.pagenav > div > div.pagenav-cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+div.pagenav > div > div.pagenav-clear {
+    height: 0;
+    clear: both;
+}
