@@ -1,7 +1,7 @@
 jquery.scrollless
 ===============
 
-jquery.scrollless plugin allows to gain total control over web page scrolling (as well as everything related to document navigation). This is implemented by replacing browser's native scrolling with "block-wise" alternative. "Block-wise" scrolling implies splitting the main content of a web page into smaller pieces ("blocks") each of them will be either displayed entirely or hidden.
+jquery.scrollless plugin allows to gain total control over web page scrolling (as well as everything related to document navigation). This is implemented by replacing browser's native scrolling with "block-wise" rendering. "Block-wise" rendering implies splitting the main content of a web page into smaller pieces ("blocks") each of them will be either displayed entirely or hidden.
 
 [Demos](http://demos.savreen.com/scrollless/demo.html)
 
@@ -10,7 +10,7 @@ Features
 -------------
 * Responsive. The plugin automatically make visible area of the main content (called "viewport") always to fit to the current window dimensions so native scrollbars have no chance to appear.
 * Auto-disabling and auto-restoring. These features are related to the previous one. It means that the plugin listening for any resize event and automatically disabled when block-wise rendering cannot be applied (i.e. when there is a block which doesn't fit to window) and restored once such rendering become available.
-* Extensible. From the UI point jquery.scrollless alone has very poor functionality resulted to the features above and it doesn't provide any kind of navigation through a document. However this functionality can be extended via plugins (extensions). jquery.scrollless is bundled with several plugins which adds navigation features as well as keyboard control. Their functionality is enough to build quite rich UI. However you can write your own plugins using one of the default plugins as a sample.
+* Extensible. From the UI point jquery.scrollless alone has very poor functionality resulted to the features above and it doesn't provide any kind of navigation through a document. However this functionality can be extended via plugins (extensions). jquery.scrollless is bundled with several plugins which adds navigation features as well as keyboard control. Their functionality is enough to build quite rich UI. However you can write your own plugins using one of the bundled plugins as a sample.
 * Customizable. The plugin has set of options which can be used to customize its behaviour.
 
 
@@ -57,6 +57,18 @@ $('#container').scrollless(options);
 * `itemQuota` - upper limit of block height. May be absolute (&gt; 1) or relative value (&lt; 1).
 * `itemNestDepth` - maximum depth of nested blocks.
 * `autoRestore` - enable/disable auto-restoring feature (`true` by default).
+
+
+Bundled Plugins
+-------------
+As mentioned above jquery.scrollless is bundled with several plugins which can be used to build UI of web application. Below is the list of these plugins.
+
+* **jquery.scrollless.pagenav** - adds page navigation (pagination) feature (horizontal bar that will appear at the top of the main content). "Page" here is a logical unit which have no relation to how this will be displayed in browser. The main content is divided into pages by combination of two methods:
+  1. page-break - special CSS class in document markup ("pagenav-break" by default, may be changed through options) which indicate begining of a new page.
+  2. page quota - maximum number of characters per page (2000 by default). This method is used by default (if there is no page-break in markup).
+* **jquery.scrollless.affixnav** - Twitter Bootstrap's [Affix plugin](http://getbootstrap.com/javascript/#affix) counterpart. Unlike the original plugin it automatically generate list of headers in the contents sidebar. Each header of the main content you want to appear in the contents sidebar should have special CSS class ("affixnav-header" by default, may be changed through options)
+* **jquery.scrollless.keyctrl** - emulation of browsers' keyboard control as well as mouse wheel control (optionally).
+* **jquery.scrollless.tapctrl** - emulation of e-book readers' tap control (like in Nook Simple Touch).
 
 
 API
