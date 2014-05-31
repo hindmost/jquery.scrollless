@@ -1,0 +1,33 @@
+{
+	"name": "scrollless",
+	"version": "0.9.0",
+	"dependencies": {
+		"jquery": ">=1.7"
+	},
+	"title": "jQuery scrollless",
+	"author": {
+		"name": "Savr Goryaev",
+		"url": "http://savreen.com/contact/"
+	},
+	"licenses": [
+		{
+			"type": "GPL v2",
+			"url": "http://opensource.org/licenses/GPL-2.0"
+		}
+	],
+	"description": "jquery.scrollless plugin allows to gain total control over web page scrolling as well as everything related to document navigation. This is implemented by replacing browser's native scrolling with \"block-wise\" rendering. \"Block-wise\" rendering implies splitting the main content of a web page into smaller pieces (\"blocks\") each of them will be either displayed entirely or hidden",
+	"keywords": [
+		"scrollless",
+		"block-wise",
+		"responsive",
+		"navigation",
+		"pagination",
+		"scrolling",
+		"scrollbar"
+	],
+	"homepage": "https://github.com/hindmost/jquery.scrollless",
+	"demo": "http://demos.savreen.com/scrollless/demo.html",
+	"docs": "https://github.com/hindmost/jquery.scrollless",
+	"download": "https://github.com/hindmost/jquery.scrollless",
+	"bugs": "https://github.com/hindmost/jquery.scrollless/issues"
+}
