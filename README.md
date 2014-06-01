@@ -73,17 +73,18 @@ As mentioned above jquery.scrollless is bundled with several plugins which can b
 
 API
 -------------
-jquery.scrollless provides API - the set of methods which can be used to implement interaction between jquery.scrollless and its plugins as well as main web application. Below is the list of available API methods.
+jquery.scrollless provides API - the set of methods which can be used to implement interaction between jquery.scrollless and its plugins as well as main web application. API methods are accessible through the static object jquery.scrollless. Below is the list of these methods.
 
 ### setPos
 Set position of viewport
 
+**Syntax**:
 ``` javascript
-setPos(pos)
+jquery.scrollless.setPos(pos)
 ```
 or
 ``` javascript
-setPos(posInfo)
+jquery.scrollless.setPos(posInfo)
 ```
 
 **Parameters**:
@@ -95,15 +96,17 @@ setPos(posInfo)
 ### disable
 Force disabling of jquery.scrollless
 
+**Syntax**:
 ``` javascript
-disable()
+jquery.scrollless.disable()
 ```
 
 ### on
 Attach callback for jquery.scrollless event (see **Events** section).
 
+**Syntax**:
 ``` javascript
-on(eventName, eventCallback)
+jquery.scrollless.on(eventName, eventCallback)
 ```
 
 **Parameters**:
