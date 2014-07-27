@@ -3,7 +3,7 @@
  * Total replacement of native scrolling
  * https://github.com/hindmost/jquery.scrollless
  * 
- * @version  0.9.0
+ * @version  1.0.0
  * @requires jQuery
  * @author   Savr Goryaev (savreen.com/contact/)
  * @license  GPL v2 http://opensource.org/licenses/GPL-2.0
@@ -41,7 +41,6 @@ var aNestRange = [];
 var aSizeSrc = [];
 var aSizeXtra = [];
 var aSize = [];
-var aSizeFlag = [];
 var hMaxItem = 0;
 var hCntrXtra = 0;
 var wWnd = 0;
@@ -53,6 +52,8 @@ var hWndFxdMin = 0;
 var iViewStart = 0;
 var iViewEnd = 0;
 var nIdTimer = 0;
+var fnAnimate = 0;
+var fnAnimateEnd = 0;
 
 $.scrollless = {
     on: function(sEvent, fnCallback) {
@@ -61,9 +62,12 @@ $.scrollless = {
     },
     setPos: function(v) {
         if (typeof v == 'object')
-            setViewPos(v.pos, v.left, v.right);
+            setPos(v.pos, v.left, v.right);
         else if (typeof v == 'number')
-            setViewPos(v);
+            setPos(v);
+    },
+    setPosComplete: function() {
+        setPosComplete();
     },
     disable: function() {
         disable(false);
@@ -75,12 +79,13 @@ $.fn.scrollless = function(v) {
         return this;
     if (!oCntr) {
         oCntr = this.eq(0);
+        oCntr.css({'overflow': 'hidden'});
         $(window).on('resize', function() {
             onResize();
         });
     }
     if (init(v))
-        setViewPos(iPosInit);
+        setPos(iPosInit, null, null, true);
     else
         disable(false);
     return this;
@@ -90,7 +95,8 @@ $.fn.scrollless = function(v) {
 function init(oOpts) {
     if (!oCntr) return false;
     bEnable = true;
-    resetViewPos();
+    fnAnimate = animateByDeft;
+    resetPos();
     if (typeof oOpts != 'object') oOpts = {};
     for (var i in aFnPreInit) aFnPreInit[i].call(oCntr, oOpts);
     if (!setOptions(oOpts) || !oCntr.children().length) return false;
@@ -120,8 +126,8 @@ function init(oOpts) {
         for (i = 0; i < nItems; i++)
             aoItems.eq(i).data('iItem', i);
     }
-    callbackOnSize(true);
     for (i in aFnPostInit) aFnPostInit[i].call(oCntr, aoItems, aSize.slice());
+    callbackOnSize();
     if (bAttachData) {
         aoItems.removeClass('scrollless-item');
         for (i = 0; i < nItems; i++)
@@ -144,6 +150,10 @@ function setOptions(obj) {
         bAttachData = Boolean(obj.attachItemData);
     if ('timePostpone' in obj && obj.timePostpone >= 300)
         nTimePostpone = Math.floor(Number(obj.timePostpone));
+    if ('fnAnimate' in obj && typeof obj.fnAnimate == 'function')
+        fnAnimate = obj.fnAnimate;
+    if ('fnAnimateEnd' in obj && typeof obj.fnAnimateEnd == 'function')
+        fnAnimateEnd = obj.fnAnimateEnd;
     return true;
 }
 
@@ -184,7 +194,7 @@ function onResize() {
         return;
     }
     if (recalcWnd()) {
-        callbackOnSize(false);
+        callbackOnSize(true);
         reduceView(true);
     }
     nIdTimer= setTimeout(postponeResize, nTimePostpone);
@@ -194,16 +204,12 @@ function postponeResize() {
     clearTimer();
     if (!bEnable) return;
     recalcWnd();
-    if (Math.abs(wWnd/wWndFxd-1) > 0.1) {
+    if (wWnd != wWndFxd) {
         recalcItems();
         aoItems.slice(iViewStart, iViewEnd).show();
         showNests();
     }
-    else if (wWnd != wWndFxd) {
-        recalcVisible();
-        recalcHidden();
-    }
-    if (wWnd > wWndFxd || hWnd > hWndFxd)  {
+    if (wWnd > wWndFxd || hWnd > hWndFxd) {
         expandView();
     }
     wWndFxd = wWnd; hWndFxd = hWnd;
@@ -211,19 +217,19 @@ function postponeResize() {
         wWndFxdMin = wWndFxd;
         hWndFxdMin = hWndFxd;
     }
-    callbackOnSize(true);
-    callbackOnPos();
+    callbackOnSize();
+    reduceView();
+    callbackOnPos(true);
 }
 
-function resetViewPos() {
+function resetPos() {
     iViewStart = iViewEnd = 0;
 }
 
-function setViewPos(iPos, iLeft, iRight) {
+function setPos(iPos, iLeft, iRight, bReset) {
     iPos = typeof iPos == 'number'? iPos : 0;
     if (!(iPos >= 0 && iPos < nItems) || iViewEnd >= nItems && iPos > iViewStart)
         return;
-    var iPrev1 = iViewStart, iPrev2 = iViewEnd;
     var h = hWnd - hCntrXtra;
     var bL = typeof iLeft == 'number' && iLeft >= 0 && iLeft <= iPos,
         bR = typeof iRight == 'number' && iRight > 0 && iRight < nItems;
@@ -231,42 +237,66 @@ function setViewPos(iPos, iLeft, iRight) {
     iRight = bR? iRight : nItems;
     for (var s = 0, i = iPos; i < iRight && s + aSize[i] < h; i++)
         s += aSize[i];
-    iViewEnd = i;
-    iViewStart = iPos;
-    if (bR || iViewEnd == nItems) {
-        for (i = iViewStart - 1; i >= iLeft && s + aSize[i] < h; i--)
+    var iSt = iPos, iEnd = i;
+    if (bR || iEnd == nItems) {
+        for (i = iSt - 1; i >= iLeft && s + aSize[i] < h; i--)
             s += aSize[i];
-        if (i < iViewStart - 1) iViewStart = i + 1;
+        if (i + 1 < iSt && i + 1 != iViewStart) iSt = i + 1;
     }
-    if (bR && iViewStart == iLeft) {
-        for (i = iViewEnd; i < nItems && s + aSize[i] < h; i++)
+    if (bR && iSt == iLeft) {
+        for (i = iEnd; i < nItems && s + aSize[i] < h; i++)
             s += aSize[i];
-        if (i > iViewEnd) iViewEnd = i;
+        if (i > iEnd) iEnd = i;
     }
-    if (iViewStart == iViewEnd) {
+    if (iSt == iEnd) {
         disable(true); return;
     }
-    if (iViewStart == iPrev1 && iViewEnd == iPrev2) return;
-    aoItems.hide().slice(iViewStart, iViewEnd).show();
+    if (iSt == iViewStart && iEnd == iViewEnd) return;
+    var iPrevSt = iViewStart, iPrevEnd = iViewEnd;
+    iViewStart = iSt; iViewEnd = iEnd;
+    callbackOnPos();
+    if (bReset) {
+        aoItems.hide().slice(iSt, iEnd).show();
+        setPosComplete();
+        return;
+    }
+    if (fnAnimateEnd) fnAnimateEnd();
+    var o = {
+        height: h,
+        startPrev: iPrevSt,
+        endPrev: iPrevEnd,
+        start: iSt,
+        end: iEnd
+    };
+    fnAnimate(o);
+}
+
+function setPosComplete() {
     showNests();
-    if (!reduceView()) flagItems();
+    reduceView();
     callbackOnPos();
 }
 
-function reduceView(bRecalc) {
+function reduceView(bSizing) {
     if (iViewEnd- iViewStart <= 1) return false;
-    var hCut = $(document).height() - hWnd;
+    var hCut = calcHiddenHeight();
     if (hCut <= 0) return false;
-    if (bRecalc) recalcVisible();
+    if (bSizing) recalcVisible();
     for (var s = 0, i = iViewEnd-1; i > iViewStart && (s += aSize[i]) < hCut; i--);
     if (i <= iViewStart) {
-        disable(true); return false;
+        if (!bSizing) disable(true);
+        return false;
     }
     aoItems.slice(i, iViewEnd).hide();
     iViewEnd = i;
     showNests();
-    flagItems();
+    if (bSizing || (hCut = calcHiddenHeight()) <= 0) return true;
+    disable(true);
     return true;
+}
+
+function calcHiddenHeight() {
+    return $(document).height() - hWnd;
 }
 
 function expandView() {
@@ -280,24 +310,25 @@ function expandView() {
     aoItems.slice(iViewEnd, i).show();
     iViewEnd = i;
     showNests();
-    if (!reduceView()) flagItems();
+    reduceView();
 }
 
 function disable(bShow) {
     if (!bEnable) return;
     bEnable = false;
-    resetViewPos();
+    if (fnAnimateEnd) fnAnimateEnd();
+    resetPos();
     if (bShow) {
         if (nItems) aoItems.show();
         if (nNests) aoNests.show();
     }
     if (!aFnDisable.length) return;
-    for (var i in aFnDisable) aFnDisable[i].call(null);
+    for (var i in aFnDisable) aFnDisable[i]();
 }
 
 function restore() {
     if (init())
-        setViewPos(iViewStart);
+        setPos(iViewStart, null, null, true);
     else 
         disable(false);
 }
@@ -319,13 +350,12 @@ function recalcWnd() {
 function recalcItems() {
     var hDoc0 = $(document).height(), hCntr0 = oCntr.height();
     var oStyle = oCntr.get(0).style;
-    oStyle.overflow = 'hidden';
     oStyle.visibility = 'hidden';
     oStyle.height = hMaxItem; oStyle.width = oCntr.width();
     aoItems.show();
     var hDoc = $(document).height(), hCntr = oCntr.height();
-    hCntrXtra = hDoc - hCntr;
-    aSize.length = aSizeSrc.length = aSizeXtra.length = aSizeFlag.length = 0;
+    hCntrXtra = hDoc - hCntr + 1;
+    aSize.length = aSizeSrc.length = aSizeXtra.length = 0;
     var aHxtd = [];
     var hC0 = oCntr.height();
     for (var s = 0, i = nItems-1; i >= 0; i--) {
@@ -334,12 +364,10 @@ function recalcItems() {
         var hC = oCntr.height();
         s += (aHxtd[i] = Math.max(hC0 - hC, 0));
         aSizeXtra[i] = Math.max(aHxtd[i] - h, 0);
-        aSizeFlag[i] = 0;
         hC0 = hC;
     }
     if (nNests) aoNests.hide();
     oStyle.height = oStyle.width = 'auto';
-    oStyle.overflow = 'visible';
     oStyle.visibility = 'visible';
     aSizeSrc = aHxtd.slice();
     aSize = aHxtd.slice();
@@ -352,22 +380,12 @@ function recalcVisible() {
     }
 }
 
-function recalcHidden() {
-    for (var s = 0, i= iViewStart; i < iViewEnd; i++) {
-        s += aSize[i] / aSizeSrc[i];
-    }
-    var ratio = s / (iViewEnd - iViewStart);
-    var bEx = ratio > 1;
-    for (i= 0; i < nItems; i++) {
-        if (i >= iViewStart && i < iViewEnd || aSizeFlag[i]) continue;
-        aSize[i] = bEx? Math.round(aSizeSrc[i] * ratio) : aSizeSrc[i];
-    }
-}
-
-function flagItems() {
-    for (var i= iViewStart; i < iViewEnd; i++) {
-        aSizeFlag[i] = 1;
-    }
+function animateByDeft(obj) {
+    if (obj.expand)
+        aoItems.slice(iViewEnd, obj.end).show();
+    else
+        aoItems.hide().slice(obj.start, obj.end).show();
+    setPosComplete();
 }
 
 function showNests() {
@@ -379,28 +397,30 @@ function showNests() {
     }
 }
 
-function callbackOnSize(bFixed) {
+function callbackOnSize(bSizing) {
     if (!aFnChangeSize.length) return;
     var o = {
-        fixed: bFixed,
+        sizing: Boolean(bSizing),
         height: hWnd - hCntrXtra
     };
-    for (var i in aFnChangeSize) aFnChangeSize[i].call(null, o);
+    for (var i in aFnChangeSize) aFnChangeSize[i](o);
 }
 
 var iViewStartPrev = 0;
 var iViewEndPrev = 0;
 
-function callbackOnPos() {
+function callbackOnPos(bResize) {
     if (!aFnChangePos.length) return;
-    if (iViewStart == iViewStartPrev && iViewEnd == iViewEndPrev) return;
+    if (!bResize && iViewStart == iViewStartPrev && iViewEnd == iViewEndPrev) return;
     iViewStartPrev = iViewStart; iViewEndPrev = iViewEnd;
     var o = {
         items: nItems,
         start: iViewStart,
         end: iViewEnd
     };
-    for (var i in aFnChangePos) aFnChangePos[i].call(null, o);
+    for (var i in aFnChangePos) aFnChangePos[i](o);
+    if (calcHiddenHeight() > 0)
+        disable(true);
 }
 
 })(jQuery);

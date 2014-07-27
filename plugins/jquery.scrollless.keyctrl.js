@@ -2,7 +2,7 @@
  * jquery.scrollless.keyctrl
  * Keyboard control for jquery.scrollless
  * 
- * @version  0.9.0
+ * @version  1.0.0
  * @requires jquery.scrollless
  * @author   Savr Goryaev (savreen.com/contact/)
  * @license  GPL v2 http://opensource.org/licenses/GPL-2.0

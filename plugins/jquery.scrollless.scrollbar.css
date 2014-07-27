@@ -1,0 +1,61 @@
+.affixscrollbar {
+    margin: 0;
+    padding: 0 0 0 4px;
+}
+
+.affixscrollbar > div {
+    margin: 0;
+    padding: 0;
+}
+
+.affixscrollbar > div.scrollbar {
+    position: relative;
+    overflow: hidden;
+    width: 4px; height: 0;
+    margin-left: 5px;
+}
+
+.affixscrollbar > div.scrollbar > div.scrollbar-track {
+    width: 100%; height: 100%;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.affixscrollbar > div.scrollbar > div.scrollbar-thumb {
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 2px;
+    background-color: gray;
+    z-index: 2;
+}
+
+.affixscrollbar > div.scrollbar-spacer {
+    height: 6px;
+}
+
+.affixscrollbar > div.scrollbar-btn {
+    cursor: pointer;
+}
+
+.affixscrollbar > div.scrollbar-btn > div.btn-icon {
+    width: 0; height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.affixscrollbar > div.scrollbar-btn > div.btn-icon-up {
+    border-bottom: 7px solid #9ccae3;
+}
+
+.affixscrollbar > div.scrollbar-btn > div.btn-icon-dn {
+    border-top: 7px solid #9ccae3;
+}
