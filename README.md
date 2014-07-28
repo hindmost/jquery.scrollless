@@ -12,6 +12,7 @@ Features
 * Auto-disabling and auto-restoring. These features are related to the previous one. It means that the plugin listening for any resize event and automatically disabled when block-wise rendering cannot be applied (i.e. when there is a block which doesn't fit to window) and restored once such rendering become available.
 * Extensible. From the UI point jquery.scrollless alone has very poor functionality resulted to the features above and it doesn't provide any kind of navigation through a document. However this functionality can be extended via plugins (extensions). jquery.scrollless is bundled with several plugins which adds navigation features as well as keyboard control. Their functionality is enough to build quite rich UI. However you can write your own plugins using one of the bundled plugins as a sample.
 * Customizable. The plugin has set of options which can be used to customize its behaviour.
+* Animation support. The plugin support custom animation effects applied whenever viewport position is changed.
 
 
 Dependencies
@@ -57,6 +58,13 @@ $('#container').scrollless(options);
 * `itemQuota` - upper limit of block height. May be absolute (&gt; 1) or relative value (&lt; 1).
 * `itemNestDepth` - maximum depth of nested blocks.
 * `autoRestore` - enable/disable auto-restoring feature (`true` by default).
+* `fnAnimate` - callback function has to be called to start custom animation. If not provided, the default animation (hide/show) will be applied. If provided, gets passed one argument - object containing these properties:
+  1. startPrev - start of the previous viewport.
+  2. endPrev - end of the previous viewport.
+  3. start - start of the current viewport.
+  4. end - end of the current viewport.
+  5. height - available height for the container.
+* `fnAnimateEnd` - callback function has to be called to end custom animation. Received no arguments.
 
 
 Bundled Plugins
@@ -67,8 +75,10 @@ As mentioned above jquery.scrollless is bundled with several plugins which can b
   1. page-break - special CSS class in document markup ("pagenav-break" by default, may be changed through options) which indicate begining of a new page.
   2. page quota - maximum number of characters per page (2000 by default). This method is used by default (if there is no page-break in markup).
 * **jquery.scrollless.affixnav** - Twitter Bootstrap's [Affix plugin](http://getbootstrap.com/javascript/#affix) counterpart. Unlike the original plugin it automatically generate list of headers in the contents sidebar. Each header of the main content you want to appear in the contents sidebar should have special CSS class ("affixnav-header" by default, may be changed through options)
-* **jquery.scrollless.keyctrl** - emulation of browsers' keyboard control as well as mouse wheel control (optionally).
-* **jquery.scrollless.tapctrl** - emulation of e-book readers' tap control (like in Nook Simple Touch).
+* **jquery.scrollless.scrollbar** - adds custom vertical scrollbar (at the right side of the main content). Requires jquery.scrollless.affixnav plugin to be included first. Note that drag-n-drop actions are not allowed.
+* **jquery.scrollless.animbyscroll** - implements custom animation: emulates scrolling effect on viewport position update.
+* **jquery.scrollless.keyctrl** - emulates browsers' keyboard control as well as mouse wheel control (optionally).
+* **jquery.scrollless.tapctrl** - emulates e-book readers' tap control (like in Nook Simple Touch).
 
 
 API
@@ -76,7 +86,7 @@ API
 jquery.scrollless provides API - the set of methods which can be used to implement interaction between jquery.scrollless and its plugins as well as main web application. API methods are accessible through the static object jquery.scrollless. Below is the list of these methods.
 
 ### setPos
-Set position of viewport
+Set/update position of viewport
 
 **Syntax**:
 ``` javascript
@@ -92,6 +102,14 @@ jquery.scrollless.setPos(posInfo)
 * `pos` (`Number`) or `posInfo.pos` (`Object`) - desired starting block of viewport
 * `posInfo.left` (`Number`) - left limit for starting block
 * `posInfo.right` (`Number`) - right limit for ending block
+
+### setPosComplete
+Perform all actions needed to complete setting/updating position of viewport. Intended for use in custom animation plugins
+
+**Syntax**:
+``` javascript
+jquery.scrollless.setPosComplete()
+```
 
 ### disable
 Force disabling of jquery.scrollless
@@ -130,7 +148,7 @@ jquery.scrollless trigger the following custom events which may be bound with ca
 * changeSize
 
 ### preInit
-Triggered before jquery.scrollless is applying. Intended for use in plugins. A plugin should have callback for this event if it goes to modify document structure (e.g. add new elements).
+Triggered before jquery.scrollless is applying. Intended for use in plugins. A plugin should have callback for this event if it going to modify document structure (e.g. add new elements).
 
 **Callback declaration**:
 ```
@@ -192,7 +210,7 @@ function callback(sizeInfo) {...}
 ```
 
 * `sizeInfo.height` (`Number`) - available (maximum) height for the container
-* `sizeInfo.fixed` (`Boolean`) - if sizing process is completed (`true`) or not (`false`)
+* `sizeInfo.sizing` (`Boolean`) - indicate that sizing is in process (not finished)
 
 
 
