@@ -2,23 +2,23 @@ table.affixnav-wrap td {
     vertical-align: top;
 }
 
-td.affixnav {
+.affixnav {
     width: 180px;
-    padding-left: 15px;
+    padding-left: 12px;
 }
 
-td.affixnav > ul {
+.affixnav > div.affixnav-spacer {
+    height: 3px;
+}
+
+.affixnav > ul {
     list-style: none outside none;
-    padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: 1px solid #EEEEEE;
-    border-bottom: 1px solid #EEEEEE;
+    padding-left: 0;
 }
 
-td.affixnav > ul > li.affixnav-item {
+.affixnav > ul > li {
     color: black;
     cursor: pointer;
     padding-left: 0;
@@ -26,48 +26,43 @@ td.affixnav > ul > li.affixnav-item {
     padding-bottom: 3px;
 }
 
-td.affixnav > ul > li.affixnav-item:hover {
+.affixnav > ul > li:hover {
     text-decoration:underline;
 }
 
-td.affixnav > ul > li.affixnav-item.level2 {
+.affixnav > ul > li.level2 {
     padding-left: 8px;
     font-size: 85%;
 }
-td.affixnav > ul > li.affixnav-item.level3 {
+.affixnav > ul > li.level3 {
     padding-left: 16px;
     font-size: 75%;
 }
-td.affixnav > ul > li.affixnav-item.level4 {
+.affixnav > ul > li.level4 {
     padding-left: 24px;
     font-size: 65%;
 }
-td.affixnav > ul > li.affixnav-item.level5 {
+.affixnav > ul > li.level5 {
     padding-left: 32px;
     font-size: 60%;
 }
 
-td.affixnav > ul > li.affixnav-item.affixnav-cursor {
+.affixnav > ul > li.affixnav-cursor {
     color: gray;
     text-decoration:underline;
 }
 
-td.affixnav > div.affixnav-arrow {
+.affixnav > div.affixnav-elps {
     text-align: center;
-    visibility: hidden;
 }
 
-td.affixnav > div.affixnav-arrow > span {
+.affixnav > div.affixnav-elps > span {
     margin: 0;
     color: gray;
     font-weight: bold;
-    cursor: pointer;
+    visibility: hidden;
 }
 
-td.affixnav > div.affixnav-arrow > span.arrow-up::before {
-    content: "\25B2";
-}
-
-td.affixnav > div.affixnav-arrow > span.arrow-down::before {
-    content: "\25BC";
+.affixnav > div.affixnav-elps > span::before {
+    content: "\22EF";
 }

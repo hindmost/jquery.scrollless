@@ -2,7 +2,7 @@
  * jquery.scrollless.affixnav
  * Contents navigation for jquery.scrollless
  * 
- * @version  0.9.0
+ * @version  1.0.0
  * @requires jquery.scrollless
  * @author   Savr Goryaev (savreen.com/contact/)
  * @license  GPL v2 http://opensource.org/licenses/GPL-2.0
@@ -16,11 +16,15 @@ $.scrollless
 .on('changeSize', onChangeSize).on('changePos', onChangePos);
 
 // Const:
-var sHtmlListItem = '<li class="affixnav-item"></li>';
+var sHtmlElps = '<div class="affixnav-elps"><span></span></div>';
+var sHtmlSpacer = '<div class="affixnav-spacer"></div>';
+var sHtmlListItem = '<li></li>';
 var sHtmlNavCnt = 
-    '<div class="affixnav-arrow"><span class="arrow-up"></span></div>'+
+    sHtmlElps+
+    sHtmlSpacer+
     '<ul></ul>'+
-    '<div class="affixnav-arrow"><span class="arrow-down"></span></div>';
+    sHtmlSpacer+
+    sHtmlElps;
 var sHtmlNav = '<td class="affixnav"></td>';
 var sHtmlNavWrap = '<table class="affixnav-wrap"><tr><td></td></tr></table>';
 // Options:
@@ -33,7 +37,7 @@ var oNav = 0;
 var nItems = 0;
 var nHeaders = 0;
 var aoHeaders = 0;
-var aoArrows = 0;
+var aoElps = 0;
 var aItem4Hdr = [];
 var aHdr4Item = [];
 var aSize = [];
@@ -41,6 +45,7 @@ var hMargin = 0;
 var hAvail = 0;
 var iCurSt = 0;
 var iCurEnd = 0;
+var bSizing = false;
 
 function onPreInit(oOpts) {
     if (!this || !setOptions(oOpts) ||
@@ -96,8 +101,11 @@ function onPostInit(aoItems, aHeights) {
         aTitles.push(oElem.text());
     }
     var oHdr = $(sHtmlListItem);
-    var oList = oNav.children().eq(1).empty();
-    var h0 = oNav.height();
+    var oList = oNav.children('ul').eq(0).empty();
+    var h0 = 0;
+    oNav.children().each(function () {
+        h0 += $(this).height();
+    });
     var aH = [];
     for (i = 0; i < nHeaders; i++) {
         var oCurr = oHdr.clone().html(aTitles[i])
@@ -105,16 +113,13 @@ function onPostInit(aoItems, aHeights) {
         aH[i] = oNav.height() - h0;
         oCurr.hide();
     }
-    hMargin = h0;
+    hMargin = h0+1;
     aSize = aH;
     aoHeaders = oList.children()
     .on('click', onClickHeader);
-    if (aoArrows) return;
-    aoArrows = oNav.find('.affixnav-arrow');
-    aoArrows.children().each(function(i){
-        $(this).data('arrowtype', i);
-    })
-    .on('click', onClickArrow);
+    if (!aoElps) {
+        aoElps = oNav.find('.affixnav-elps > span');
+    }
 }
 
 function onDisable() {
@@ -125,12 +130,13 @@ function onDisable() {
 
 function onChangeSize(oSize) {
     if (!bEnable || typeof oSize != 'object') return;
-    if (oSize.fixed) {
+    if (!oSize.sizing) {
+        bSizing = false;
         hAvail = oSize.height;
     }
-    else {
-        hAvail = oCntr.height();
-        showPos();
+    else if (!bSizing) {
+        bSizing = true;
+        hidePos();
     }
 }
 
@@ -167,8 +173,13 @@ function showPos() {
     var iHdr1 = j < iCurSt - 1? j+1 : iCurSt, iHdr2 = i;
     aoHeaders.removeClass('affixnav-cursor').slice(iCurSt, iCurEnd).addClass('affixnav-cursor');
     aoHeaders.hide().slice(iHdr1, iHdr2).show();
-    showArrow(0, iHdr1);
-    showArrow(1, iHdr2 < nHeaders - 1);
+    showElps(0, iHdr1);
+    showElps(1, iHdr2 < nHeaders - 1);
+}
+
+function hidePos() {
+    aoHeaders.hide();
+    showElps(0, 0); showElps(1, 0);
 }
 
 function onClickHeader(oEvt) {
@@ -178,14 +189,8 @@ function onClickHeader(oEvt) {
     $.scrollless.setPos(iPos);
 }
 
-function onClickArrow(oEvt) {
-    oEvt.preventDefault();
-    var iDown = Number($(this).data('arrowtype'));
-    $.scrollless.setPos(iDown? aItem4Hdr[nHeaders-1] : aItem4Hdr[0]);
-}
-
-function showArrow(i, b) {
-    aoArrows.eq(i).css('visibility', b? 'visible' : 'hidden');
+function showElps(i, b) {
+    aoElps.eq(i).css('visibility', b? 'visible' : 'hidden');
 }
 
 })(jQuery);
